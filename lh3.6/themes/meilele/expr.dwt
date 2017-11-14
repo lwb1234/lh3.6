@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css" />
+<script src="themes/meilele/js/jq.js?1119"></script>
+<link href="themes/meilele/css/sub_expr.min.css" rel="stylesheet" type="text/css" />
+<title>{insert name='area_name'}体验馆</title>
+
+</head>
+<body style="background-color:#FFFFFF">
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+{foreach from=get_advlist_by_id(16) item=ad name=index_image}
+<div class="w mt20 top_banner" id="JS_banner" style="height: 60px; display: block; overflow: hidden;">
+  <div id="JS_banner_box_0_howom9wa" style="display: block; margin-left: -105px;"><a id="JS_banner_link_0_howom9wa" href="{$ad.url}" title="{$ad.name}" target="_blank"><img id="JS_banner_img_0_howom9wa" src="{$ad.image}" height="60" width="1190"></a></div>
+</div>
+{/foreach}
+<div id="exprGroup" class="w clearfix">
+  <div class="indexTitle" style="padding-bottom:5px;"> <span class="titleCN">{insert name='area_name'}体验馆</span>  </div>
+  <div class="speLine" style="border-left:1px solid #dcdcdc;border-right:1px solid #dcdcdc;"></div>
+  <div id="JS_expr_resort_box" class="exprGroup clearfix">
+  {if $suppliers}
+  <!--{foreach from=$suppliers item=supplier name=suppliers}-->
+    <div class="eList">
+      <div class="header"><span></span><strong><a class="name" href="expr_show-{$supplier.suppliers_id}.html" target="_blank" title="{$supplier.suppliers_name}">{$supplier.suppliers_name}</a></strong></div>
+      <div class="body">
+        <div class="imgBox"><a href="expr_show-{$supplier.suppliers_id}.html" target="_blank"><img src="{$supplier.logo}" width="166" height="103" alt="{$supplier.suppliers_name}" /></a> </div>
+        <ul class="infoBox">
+          <li class="clearfix"><span class="name">服务电话：</span><span class="txt" title="{$supplier.tel}">{$supplier.tel}&ensp;</span></li>
+          <li class="clearfix"><span class="name">营业时间：</span><span class="txt">{$supplier.work_time}</span></li>
+          <li class="clearfix"><span class="name">展馆地址：</span><a title="{$supplier.address}" href="expr_show.php?id={$supplier.suppliers_id}" target="_blank" class="txt">{$supplier.address}</a></li>
+        
+        </ul>
+      </div>
+    </div>
+    <!--{/foreach}-->
+{else}
+<div style="padding:30px; text-align:center; font-size:14px; ">
+{insert name='area_name'}暂无体验馆！
+</div>
+{/if}	
+  </div>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
+<!--
+LDZ:2013-11-27 16:42:23
+-->

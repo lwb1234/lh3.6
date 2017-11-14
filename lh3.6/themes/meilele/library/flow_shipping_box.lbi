@@ -1,0 +1,12 @@
+<table width="100%"  cellpadding="0" cellspacing="0" >
+			<!-- {foreach from=$shipping_list name=shipping_list item=shipping} 循环配送方式 -->
+			<tr><td width="30%" height=25  valign=top>
+			<input name="shipping" type="radio" value="{$shipping.shipping_id}"  supportCod="{$shipping.support_cod}" insure="{$shipping.insure}" onclick="selectShipping(this)" /> {$shipping.shipping_name} 
+			[{$shipping.format_shipping_fee}]
+			</td>
+			<td width="70%" valign=top>
+			{$shipping.shipping_desc}
+			</td>
+			</tr>
+			<!-- {/foreach} 循环配送方式 -->
+			</table>

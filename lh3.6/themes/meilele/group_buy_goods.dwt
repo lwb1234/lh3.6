@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css?1122" />
+<link rel="stylesheet" href="themes/meilele/css/tuangou_detail.min.css?1030" type="text/css" media="screen" title="no title" charset="utf-8"/>
+<script src="themes/meilele/js/common.min.js?0905"></script>
+<script src="themes/meilele/js/jq.js"></script>
+<script src="themes/meilele/js/jquery.json.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+			window.ISSCREENWIDTH = false;
+			(function() {
+				//return;
+				var screenWidth = window.screen.width;
+				if (screenWidth >= 1280) {
+					document.body.className = "root_body";
+					window.ISSCREENWIDTH = true;
+				}
+			})()
+		</script>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="tugouWrap w">
+  <div class="tg_pos"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --> </div>
+  <div class="tg_dtl_wrap w clearfix">
+    <div class="tg_dtl_Left Left">
+      <div class="tg_dtl_main">
+        <div class="dtl_main_top clearfix">
+          <h1 class="Left"><a target="_blank" title="{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}" href="{$gb_goods.url}">{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if} </a></h1>
+          <p class="Right"> 编号：{$gb_goods.goods_sn} </p>
+        </div>
+        <span id="JS_user_limit" style="display:none">10000</span>
+        <p class="dtl_main_tishi mt15"> （{$gb_goods.goods_brief}） </p>
+        <div class="dtl_main_info clearfix">
+          <form action="group_buy.php?act=buy" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY">
+		  <input type="hidden" name="group_buy_id" value="{$group_buy.group_buy_id}" />
+            <div class="main_infoL Left" id="JS_time" data-starTime="{$group_buy.start_date}" data-endTime="{$group_buy.end_date}" data-RemainNum="35"> <a title="" href="javascript:ECS_FORMBUY.submit();" class="infobnr" id="JS_bnr_state"><b>&yen;</b>{$group_buy.formated_cur_price} </a>
+			
+              <div class="numbox"> <span>我要买：</span><a href="javascript:;" onClick="TG.jianNum();" class="jian"><b></b></a>
+                <input type="text" id="JS_buy_num" value="1" class="val" name="number">
+                <a href="javascript:;" onClick="TG.addNum();" class="jia"><b></b></a> </div>
+				{if $specification}
+				<div class="btnbox" style="width:308px;margin:0px auto 0 auto;padding-top:15px;padding-bottom:5px;text-align:center;border-bottom:1px solid #f4e3cb">
+			<table width="100%" border="0" cellpadding="5" cellspacing="1" style="background-color:RGB(255,249,239)">
+              <!-- {foreach from=$specification item=spec key=spec_key} 循环规格开始 -->
+              <tr>
+                <td width="40%"  style="height:25px;background-color:RGB(255,249,239)" align="right">{$spec.name}</td>
+                <td width="60%"  align="left" style="padding-left:10px;background-color:RGB(255,249,239)">
+
+                    <select name="spec_{$spec_key}" style="border:1px solid #ccc;">
+                    <!-- {foreach from=$spec.values item=value key=key} -->
+                    <option label="{$value.label}" value="{$value.id}">{$value.label} </option>
+                    <!-- {/foreach} -->
+                    </select>
+
+                </td>
+              </tr>
+              <!-- {/foreach} 循环规格结束 -->
+
+            </table>
+			</div>
+			{/if}
+              <div class="infoprc"> <span>原价 <br>
+                <del>{$group_buy.market_price}</del></span> <span class="line">折扣 <br>
+                <b>{$group_buy.t_discount}折</b></span> <span class="line">节省 <br>
+                <b>{$group_buy.formated_rebate_price}</b></span> </div>
+              <div class="buyed"> 已团购 <b id="JS_already_number">{if $group_buy.isg_rs eq 1}{$group_buy.group_rs}{else}{if $group_buy.isg_rs eq 1}{$group_buy.group_rs}{else}{$group_buy.valid_goods}{/if}{/if}</b><span>件</span> <br>
+                <span class="" id="JS_only_limit">
+                <!-- {if $group_buy.status eq 0} 未开始 -->
+                {$lang.gbs_pre_start}
+                <!-- {elseif $group_buy.status eq 1} 进行中 -->
+                <p id="leftTime" class="timecolor"> </p>
+                <!-- {elseif $group_buy.status eq 2} 已结束 -->
+                <p>{$lang.gbs_finished} {$lang.gb_cur_price} {$group_buy.formated_cur_price} <br />
+                  {$lang.gb_valid_goods} {if $group_buy.isg_rs eq 1}{$group_buy.group_rs}{else}{$group_buy.valid_goods}{/if}</p>
+                <!-- {elseif $group_buy.status eq 3} 团购成功 -->
+                <p>{$lang.gbs_succeed}
+                  {$lang.gb_final_price} {$group_buy.formated_trans_price}<br />
+                  {$lang.gb_final_amount} {$group_buy.trans_amount}</p>
+                <!-- {elseif $group_buy.status eq 4} 团购失败 -->
+                <p>{$lang.gbs_fail}</p>
+                <!-- {/if} -->
+                </span> </div>
+              <div class="timebox"> <i></i><span class="timer" id="JS_tg_timer"><b>0</b>天<b>0</b>时<b>0</b>分<b>0</b>秒</span> </div>
+              <div class="btnbox"> <a title="查看商品详情" target="_blank" href="{$gb_goods.url}" class="link">查看商品详情</a> </div>
+            </div>
+          </form>
+          <div class="main_infoR Right">
+            <p> <a title="{$group_buy.act_name|escape:html} " target="_blank" href="{$gb_goods.url}"><img width="600" height="400" src="images/blank.gif" data-src="{$group_buy.group_img}" /></a> </p>
+            <div class="infoshare clearfix">
+              <div class="Right">
+                <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a href="#" title="分享到QQ空间" class="bds_qzone"></a> <a href="#" title="分享到新浪微博" class="bds_tsina"></a> <a href="#" title="分享到腾讯微博" class="bds_tqq"></a> <a href="#" title="分享到人人网" class="bds_renren"></a> <a href="#" title="分享到复制网址" class="bds_copy"></a> <span class="bds_more"></span> </div>
+              </div>
+              <p class="Right"> 分享到： </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tg_dtl_box" style="width: auto;">
+        <div class="title"> <b class="f14">本单详情</b> </div>
+        <div class="content infos"> {$group_buy.group_buy_desc} </div>
+      </div>
+      <div id="pos_wrap">
+        <div class="tg_dtl_Right Right">
+          <div class="tg_dtlR">
+            <h2 class="f14">团购商品热销排名</h2>
+            <ul class="list">
+              <!--{foreach from=$gb_list_hot item=group_buy name=hotcun} -->
+              <li>
+                <p> <a href="{$group_buy.url}" title="{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}" target="_blank"><img src="images/blank.gif" data-src="{$group_buy.group_img}" width="180" height="118" alt="{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}"/></a> </p>
+                <p class="name"> <a href="{$group_buy.url}" title="{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}" target="_blank">{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}</a> </p>
+                <p class="tprc"> 团购价:<span class="yen">¥
+                  <!-- {foreach from=$group_buy.price_ladder item=item name=foo} -->
+                  <!-- {if $smarty.foreach.foo.last} -->
+                  {$item.price}
+                  <!-- {/if} -->
+                  <!-- {/foreach} -->
+                  </span> </p>
+                <p class="prc clearfix"> <span class="Left">原价:<del class="yen">{$group_buy.market_price}</del></span><span class="Right">已团购<b>{if $group_buy.isg_rs eq 1}{$group_buy.group_rs}{else}{$group_buy.cur_amount}{/if}</b>件</span> </p>
+              </li>
+              <!--{/foreach}-->
+            </ul>
+          </div>
+        </div>
+        <div class="tg_dtl_box Left">
+          <div class="title"> <b class="f14">宝贝评价</b> </div>
+          <script language="javascript">
+                 var comment_rank = "{insert name='comments_rank' id= $gb_goods.goods_id}";
+			</script>
+      <div class="content pingjia" id="JS_Tab_body_pingjia"><div id="ECS_COMMENT"> {* ECSHOP 提醒您：动态载入comments_list.lbi，显示评论列表和评论表单 *}{insert name='comments' type=0 id=$gb_goods.goods_id}</div></div>
+        </div>
+        <div class="tg_dtl_brn Left"> <a href="javascript:;" onClick="ECS_FORMBUY.submit();" class="infobnr" id="JS_down_bnr_state"><b>&yen;</b>{$group_buy.formated_cur_price}</a>
+          <p class="jiesheng"> 节省<b>{$group_buy.formated_rebate_price}</b>元，数量有限，请抓紧时间下单！ </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script src="themes/meilele/js/back_to_top.min.js?1127"></script>
+<script type="text/javascript" src="themes/meilele/js/tuangou_detail.min.js?1030"></script>
+<script type="text/javascript">
+			var len = document.images.length, src;
+			for (var i = 0; i < len; i++) {
+				img = document.images[i];
+				src = img.getAttribute("data-src");
+				if (src) {
+					img.src = src;
+					img.removeAttribute("data-src");
+				}
+			}
+
+			
+			function changeHeight (){
+    			if(window.ISSCREENWIDTH){
+    				var rightDom = $(".tg_dtl_Right");
+
+    				rightDom.css({
+    					'position': 'absolute',
+    					'top': 0,
+    					'right': 0
+    				});
+    				var leftDom = $(".tg_dtl_Left");
+    				var leftHeight = leftDom.height();
+    				var RightHeight = rightDom.height();
+    			    if(RightHeight > leftHeight){
+        			    leftDom.height(RightHeight);
+        			}
+    			}
+			}
+
+			changeHeight ();
+			c = $('#JS_time').attr('data-starTime');
+			a = $('#JS_time').attr('data-endTime');
+            TG.showTime(c, a);
+
+		</script>
+<script type="text/javascript" id="bdshare_js" data="type=tools"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+			document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+		</script>
+</body>
+</html>
+<!--
+GERMANY:2013-11-28 16:02:20
+-->

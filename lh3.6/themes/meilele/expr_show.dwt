@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title></title>
+
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css?1205" />
+<link rel="stylesheet" href="themes/meilele/css/expr_blog3.min.css?1121" />
+<script src="themes/meilele/js/common.min.js?0905"></script>
+<script src="themes/meilele/js/jq.js?1119"></script>
+
+</head>
+<body id="root_body">
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="position w"> <a href="expr.php?id={$supplier.city}" title="{insert name='area_name'}体验馆">{insert name='area_name'}体验馆首页</a> <span class="yen">&rsaquo;</span> <strong>{$supplier.suppliers_name}</strong> </div>
+<div class="w mt10 clearfix">
+  <div class="focusImage">
+    <div class="ImageBox">
+      <table id="JS_top_focus_img">
+        <tr>
+		{foreach from=get_advlist_by_suppliers_id($GLOBALS['smarty']->_var['supplier']['suppliers_id']) item=ad name=index_image}
+          <td><a href="javascript:;" onclick="return false;"><img id="JS_img_0" width=687 height=301  src="{$ad.image}"  data-src="{$ad.image}" alt="{$supplier.suppliers_name}" /></a></td>
+		{/foreach}  
+   
+        </tr>
+      </table>
+    </div>
+    <div class="imgnav" id="JS_top_focus_nav"> 
+	{foreach from=get_advlist_by_suppliers_id($GLOBALS['smarty']->_var['supplier']['suppliers_id']) item=ad name=index_image}
+	<a {if $smarty.foreach.index_image.iteration<2}class="current"{/if} href="javascript:;">{$smarty.foreach.index_image.iteration}</a> 
+	{/foreach}
+	</div>
+  </div>
+  <div class="Recommend">
+    <div class="RecTitle">基本信息</div>
+    <div class="RecBody">
+      <table>
+        <tr>
+          <td colspan="2" class="title_l">{$supplier.suppliers_name}</td>
+        </tr>
+        <tr>
+          <td class="info_l">服务热线：</td>
+          <td class="phone_l red yen">{$supplier.tel}</td>
+        </tr>
+        <tr>
+          <td class="info_l">营业时间：</td>
+          <td>{$supplier.work_time}</td>
+        </tr>
+        <tr>
+          <td class="info_l">服务箴言：</td>
+          <td>{$supplier.service}</td>
+        </tr>
+        <tr>
+          <td class="info_l">本馆地址：</td>
+          <td>{$supplier.address}</td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+</div>
+<div class="w mt20">
+  <div class="visitTitle clearfix"> <span class="titleIcon"></span><span class="titleTxt">本馆位置</span> </div>
+  <div class="exprSite clearfix">
+    <div class="detList" style="width:500px; overflow:hidden">
+      <div class="map_img"><a><img src="{$supplier.position_img}"></a></div>
+      
+    </div>
+    <div class="detList det_line" style="width:400px;">
+      <div class="info_top"> <span class="Chi">交通线路</span> <span class="Eng">LINE</span> </div>
+      <div class="info_mid lineBg">
+        <div class="line"><span class="detail"><a title="{$supplier.line}" target="_blank">{$supplier.line}</a></span></div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div id="JS_img_slide_mask" class="img_slide_mask"></div>
+<div class="w mt20">
+  <div class="goodsTitle" id="JS_tab_nav">
+    <table>
+      <tr>
+        <td><div class="tabNav current" style="border-right:0px" > <strong class="title">本馆展品</strong>
+            <p class="hideti"><span class="icon"></span><strong>本馆展品</strong><span class="tips">到店体验再购买，放心又省心！</span></p>
+          </div></td>
+       
+      </tr>
+    </table>
+  </div>
+  <div class="exprGoods" id="JS_tab_body">
+    <div class="tabody clearfix">
+	<!--{foreach from=$supplier_best_goods item=goods name=hot_goods}-->
+      <div class="gList">
+        <div class="imgbody"><a href="{$goods.url}" title="{$goods.name|escape:html}" target="_blank"><img src="{$goods.thumb}" title="{$goods.name|escape:html}" width="225" height="149"/></a></div>
+        <div class="infobody"><span class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}" target="_blank">{$goods.short_style_name|truncate:8:"...":true}</a></span><span class="price">本站价：<strong class="red f14 yen"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></strong></span></div>
+      </div>
+	 <!--{/foreach}--> 
+      
+    </div>
+    
+  </div>
+</div>
+
+<div class="w mt20">
+  <div class="visitTitle clearfix"> <span class="serIcon"></span><span class="titleTxt">本馆特色服务</span> </div>
+  <div class="exprServer clearfix">
+    <div class="Slist">
+      <div class="img_div"><a title="服务到家" target="_blank"><span class="home"></span></a></div>
+      <div class="info_div">
+        <p><a title="服务到家" target="_blank">在开设有体验馆的地区，您可以选择“送货上门，专业安装”服务！</a></p>
+      </div>
+    </div>
+    <div class="Slist">
+      <div class="img_div"><a title="到店支付" target="_blank"><span class="paid"></span></a></div>
+      <div class="info_div">
+        <p><a title="到店支付" target="_blank">在体验馆购买家具您可享受“先付定金，货到体验馆后支付余款的特权”。</a></p>
+      </div>
+    </div>
+    <div class="Slist">
+      <div class="img_div"><a title="退换无忧" target="_blank"><span class="return"></span></a></div>
+      <div class="info_div">
+        <p><a title="退换无忧" target="_blank">商品签收起45日内，如商品及包装保持出售时原状且配件齐全，可退换货！</a></p>
+      </div>
+    </div>
+    <div class="Slist" style="padding-right:0px;width:210px;">
+      <div class="img_div"><a title="3年质保" target="_blank"><span class="year"></span></a></div>
+      <div class="info_div">
+        <p><a title="3年质保" target="_blank">非特殊商品保修期为3年，凡质量问题一律免费维修，其他情况维修仅收成本！</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+<script type="text/javascript">
+function close2DFloat(){
+	var d = M.$('#JS_weixin_2d_float');
+	d.parentNode.removeChild(d);
+};
+(function(){
+	if( document.documentElement.clientWidth > 1024 ){
+		M.$('#JS_weixin_2d_float_close').innerHTML = '&nbsp;'
+	}
+})();
+</script>
+<div id="static_dynamic" page_sn="expr_blog2" rgn_id="233" debug=""></div>
+
+<script type="text/javascript">
+$(function(){
+	top_paly();
+	quality_play();
+	goods_tab();
+	//phto_play();
+})
+function phto_play(){
+	var next=$("#JS_next");
+	var prev=$("#JS_prev");
+	var phto=$("#JS_phto_img");
+	var len=$(".imgBox","#JS_phto_img");
+	var imgs=$("img","#JS_phto_img");
+	var i=0;
+	next.click(function(){
+		i++;
+		if(imgs.eq(i+2).attr("data-src")){
+			imgs.eq(i+2).attr("src",imgs.eq(i+2).attr("data-src"));
+			imgs.eq(i+2).attr("data-src","");
+		}
+		if((i+2)>=len.length){i=0}		
+		phto.animate({'margin-left':(0-i)*298+"px"});	
+	})
+	prev.click(function(){
+		i--;
+		if(i<0){i=(len.length-3)}
+		if(imgs.eq(i+2).attr("data-src")){
+			imgs.eq(i+2).attr("src",imgs.eq(i+2).attr("data-src"));
+			imgs.eq(i+2).attr("data-src","");
+		}	
+		phto.animate({'margin-left':(0-i)*298+"px"});
+	})
+}
+function top_paly(){
+	var _now=0;
+	var _lock=false;
+	var fo=M.$("a","#JS_top_focus_nav");
+	var no=M.$("#JS_top_focus_img");
+	var imgs = M.$("img",no);
+	var length = imgs.length;
+	M.$("#JS_top_focus_nav").onmouseover=function(){_lock=true}
+	M.$("#JS_top_focus_nav").onmouseout=function(){_lock=false}
+	no.onmouseover=function(){_lock=true}
+	no.onmouseout=function(){_lock=false}
+	var move  = function(i){		
+		var currentId;
+		i = i % length;
+		if(i<0)i= length + i;
+		if(length){
+			for(var k=0;k<length;k++){
+				M.removeClass(fo[k],"current");
+				if( fo[k] == this  || k == i ){
+					M.addClass(fo[k],"current");
+					if( isNaN(i-0) )i=k;
+					currentId = k;
+				}
+			}
+			if( imgs[currentId] && imgs[currentId].getAttribute("data-src") ){
+				imgs[currentId].src = imgs[currentId].getAttribute("data-src");
+				imgs[currentId].setAttribute("data-src","");
+			}
+		}
+		M.Animate(no,{"marginLeft":(0-i)*687+"px"},300);
+		_now = i;
+	}
+	setInterval(function(){
+		if(!_lock)move( _now + 1 );
+	},4000);
+	if(length){					
+		for(var k=0;k<length;k++){
+			M.addHandler( fo[k] , "mouseover" , move , fo[k]);
+		};
+	}	
+}
+function goods_tab(){
+	var list = $(".tabNav" , "#JS_tab_nav");
+	var img=$(".tabody","#JS_tab_body");	
+	list.each(function(i) {
+		$(this).bind('mouseover',function(){
+			var ph=$("img",img.eq(i));
+			for (var j = 0 , jj=ph.length; j < jj; j++){
+				if(ph.eq(j).attr("data-src")){
+					ph.eq(j).attr("src",ph.eq(j).attr("data-src"));
+					ph.eq(j).attr("data-src","");
+				}
+			}
+			img.addClass("none").eq(i).removeClass("none");		
+			list.removeClass("current").eq(i).addClass("current");
+		});
+	});//标签切换
+}
+function quality_play(){//品质图片切换
+	var po = M.$("a" , "#JS_pinzhi_nav");
+	var li=M.$("#JS_pinzhi_img");
+	var lit=M.$("img","#JS_pinzhi_img");
+	var length=po.length;
+	var _now=0;
+	var _lock=false;	
+	M.$("#JS_pinzhi_nav").onmouseover=function(){_lock=true}
+	M.$("#JS_pinzhi_nav").onmouseout=function(){_lock=false}	
+	var move  = function(i){		
+		var currentId;
+		i = i % length;
+		if(i<0)i= length + i;
+		if(length){
+			for(var k=0;k<length;k++){
+				M.removeClass(po[k],"current");
+				if( po[k] == this  || k == i ){
+					M.addClass(po[k],"current");
+					if( isNaN(i-0) )i=k;
+					currentId = k;
+				}
+			}
+			if( lit[currentId] && lit[currentId].getAttribute("data-src") ){
+				lit[currentId].src = lit[currentId].getAttribute("data-src");
+				lit[currentId].setAttribute("data-src","");
+			}
+		}
+		M.Animate(li,{"marginTop":(0-i)*160+"px"},300);
+		_now = i;
+	}
+	setInterval(function(){
+		if(!_lock)move( _now + 1 );
+	},4000);
+	if(length){					
+		for(var k=0;k<length;k++){
+			M.addHandler( po[k] , "mouseover" , move , po[k]);
+		};
+	}	
+}
+
+
+var slideTitle = $('#zxtk_foucus_view .info');
+$('#zxtk_foucus_view li').on('hover',function(){
+	var index = $(this).index();
+	var zIndex = $(this).css('z-index');
+	if(zIndex = 2){
+		slideTitle.eq(index).toggle(100);
+	}
+});
+
+var imgSilde={
+	img_slide:$('#JS_img_slide'),
+	img_mask:$('#JS_img_slide_mask'),
+	stage_1:$('#JS_stage_1'),
+	stage_2:$('#JS_stage_2'),
+	closeBtn:$('#JS_close_icon'),
+	//大图按钮
+	leftBtn:$('#JS_left_btn'),
+	rightBtn:$('#JS_right_btn'),
+	//小图按钮
+	preBtn:$('#JS_pre_btn'),
+	nextBtn:$('#JS_next_btn'),
+	//参数
+	small_list:$('#JS_stage_2').find('a'),
+	img_length:null,//图片数量
+	cur_index:0,//当前图片
+	per_d:673,//大图位移
+	per_dd:106,//小图位移
+	//小图当前位置
+	cur_small_index:0,
+	//图片高亮
+	last_light:0,
+	cur_light:0,
+	isLazy:true,
+
+	init:function(){
+		//初始化
+		var that=imgSilde;
+		this.setMask();
+		//事件委托
+		$('#JS_img_nav').on('click',function(e){
+			var target=e.target;
+			if(target.nodeName=='IMG'){
+				if(that.isLazy)
+				{
+					lazyImg(that.img_slide);
+					that.isLazy=false;
+				}
+				that.open();
+			}
+		});
+		//事件绑定
+		this.closeBtn.on('click',function(){that.close();});
+		//获取图片数量
+		this.img_length=this.stage_1.find('a').length;
+
+		//大图滚动
+		this.leftBtn.on('click',function(){	
+			that.move(1,that.img_length);
+			that.set_small_img();
+			that.updata_img_position();//区间更新
+			that.modify_num();//修改数字
+			
+		});
+
+		this.rightBtn.on('click',function(){
+			that.move(-1,that.img_length);
+			that.set_small_img();
+			that.updata_img_position();//区间更新
+			that.modify_num();//修改数字
+		});
+
+		//小图滚动
+		this.preBtn.on('click',function(){
+			that.move_small(6,that.img_length);
+		});
+
+		this.nextBtn.on('click',function(){
+			that.move_small(-6,that.img_length);
+		});
+
+		//点击小图
+		this.stage_2.on('click',function(e){
+			var target=e.target;
+			if(target.nodeName=='IMG')
+			{
+				var now=that.cur_index;
+				that.last_light=Math.abs(now);//维护高亮变量
+
+				var index=$(target).data('index');
+				that.stage_1.animate({marginLeft:0-(index*that.per_d)},300,'linear');
+				that.cur_index=(0-index);//维护全局变量
+
+				that.cur_light=Math.abs(index);//维护高亮变量
+				that.set_small_img();
+
+				that.modify_num();
+			}
+		});
+
+	},
+	updata_img_position:function(){
+		//获取到当前图片位置now
+		var that=imgSilde,now=that.cur_index,now_small=that.cur_small_index;
+		//区间获取
+		var big_interval=Math.ceil(Math.abs(now-1)/6)-1;
+		var small_interval=Math.ceil(Math.abs(now_small-1)/6)-1;
+		var isSameInterval=small_interval-big_interval;
+		if(isSameInterval!=0)
+		{
+			that.stage_2.animate({marginLeft:(0-big_interval)*6*that.per_dd},300,'linear');
+			that.cur_small_index=(0-big_interval)*6;
+		}
+	},
+
+	move:function(to,max_len){
+		var that=imgSilde,now=that.cur_index,per_d=that.per_d;
+		that.last_light=Math.abs(now);//维护高亮变量
+		to=now+to;
+		if(to>0) to=0;
+		if(to<0-(max_len-1)) to=0-(max_len-1);
+		that.stage_1.animate({marginLeft:to*per_d},300,'linear');
+		that.cur_index=to;
+		that.cur_light=Math.abs(to);//维护高亮变量
+	},
+
+	move_small:function(to,max_len){
+		if(max_len>6)
+		{
+		var that=imgSilde,now=that.cur_small_index,per_d=that.per_dd;
+		to=now+to;
+		if(to>0) to=0;
+		if(to<0-(max_len-1)) to=0-(max_len-1);
+		that.stage_2.animate({marginLeft:to*per_d},300,'linear');
+		that.cur_small_index=to;
+		}
+	},
+
+	set_small_img:function(){//设置缩略图高亮
+		var list=this.small_list;
+		list.eq(this.last_light).removeClass('active');
+		list.eq(this.cur_light).addClass('active');
+	},
+
+	setMask:function(){
+		this.img_mask.css({height:document.body.offsetHeight});
+	},
+	open:function(){
+		this.img_slide.show();
+		this.img_mask.show();
+	},
+	close:function(){
+		this.img_slide.hide();
+		this.img_mask.hide();
+	},
+	modify_num:function(){
+		$('#JS_update_num').html(Math.abs(this.cur_index)+1);
+	}
+}
+imgSilde.init();
+/*data-src 懒加载*/
+function lazyImg(obj){	
+		setTimeout(function(){
+			var images=$(obj).find("img");
+			for(var k = 0 , kk = images.length; k<kk;k++){
+				var img = images[k]
+				var src = img.getAttribute("data-src");
+				if( src ){
+					img.src = src ; 
+					img.removeAttribute("data-src");
+				}
+			}
+		},0);
+	}
+</script>
+</body>
+</html>
+<!--
+LDZ:2013-11-27 16:42:23
+-->

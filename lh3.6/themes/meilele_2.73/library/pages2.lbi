@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $pager.page_count > 1} -->
+<form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
+<!--{foreach from=$pager.search key=key item=item}-->
+      {if $key eq 'keywords'}
+          <input type="hidden" name="{$key}" value="{$item|escape:decode_url}" />
+        {else}
+          <input type="hidden" name="{$key}" value="{$item}" />
+      {/if}
+    <!--{/foreach}-->
+<div class="page R pageC"> 
+<!-- {if $pager.page_prev} --><a href="{$pager.page_prev}"><span class="left_arrow"></span> 上一页</a><!-- {/if} -->
+<span class="pager">
+<!-- {if $pager.page_count neq 1} -->
+    <!--{foreach from=$pager.page_number key=key item=item}--> 
+<a <!-- {if $pager.page eq $key} -->class="current"<!-- {/if} --> href="{$item}">{$key}</a> 
+<!--{/foreach}-->
+  <!-- {/if} -->
+</span>
+<!-- {if $pager.page_next} --><a href="{$pager.page_next}">下一页 <span class="right_arrow"></span></a> <!-- {/if} -->
+&ensp;共{$pager.page_count}页&ensp;到第 <input id="JS_jump_input" name="page"  onkeydown="if(event.keyCode==13)selectPage(this)" class="number" value="1" />
+      &ensp;<a class="go" title="跳转" href="javascript:;" onclick="selectPage()"> 确 定 </a>
+
+</div>
+</form>
+<!-- {/if} -->
+<script type="Text/Javascript" language="JavaScript">
+<!--
+{literal}
+function selectPage()
+{
+  selectPageForm.submit();
+}
+{/literal}
+//-->
+</script>

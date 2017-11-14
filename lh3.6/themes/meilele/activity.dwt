@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css?1122" />
+<link href="themes/meilele/css/favorable.min.css?0803" rel="stylesheet" type="text/css" />
+<script src="themes/meilele/js/jq.js?1119"></script>
+<script src="themes/meilele/js/jquery.json.min.js"></script>
+<script src="themes/meilele/js/common.min.js?0905"></script>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="mt10" style="background: #f4f1f2 url(images/act_bg.jpg) no-repeat top center;padding:0 0 40px 0;">
+  <div class="w">
+  {foreach from=get_advlist_by_id(12) item=ad name=index_image}
+    <div class="banner" style="height:125px"> <img src="{$ad.image}" width="980" height="125" /> </div>
+  {/foreach}	
+  {foreach from=get_advlist_by_id(13) item=ad name=index_image}
+    <div class="specials_ad mt10" style="height:255px;"> <a href="{$ad.url}" title="{$ad.name}" target="_blank"> <img src="{$ad.image}" width="980" height="255" /> </a> </div>
+  {/foreach}	
+    <div id="JS_filter" class="spc_filter mt10 clearfix">
+      <div class="Left left_menu"> <b>分类：</b><a href="#JS_floor_1" class="current item_height">全部特惠(<font class='pack_num'>0</font>)</a><a  class="item_height" href="#JS_floor_1">客厅(<font class='pack_count'>0</font>)</a><a  class="item_height" href="#JS_floor_2">餐厅(<font class='pack_count'>0</font>)</a><a  class="item_height" href="#JS_floor_3">卧室(<font class='pack_count'>0</font>)</a><a  class="item_height" href="#JS_floor_4">儿童房(<font class='pack_count'>0</font>)</a><a  class="item_height" href="#JS_floor_5">书房(<font class='pack_count'>0</font>)</a><a  class="item_height" href="#JS_floor_6">户外家具(<font class='pack_count'>0</font>)</a><a  class="item_height" href="#JS_floor_7">建材(<font class='pack_count'>0</font>)</a> </div>
+      
+     
+    </div>
+<script src="themes/meilele/js/common.js"></script>
+    <div class="spc_main mt20" id="JS_main">
+      <div class="floor" id="JS_floor_1" name="JS_floor_1">
+        <div class="title"> <strong> <i class="f1"></i><span class="floor_name">客厅</span> </strong> </div>
+        <div class="body">
+          <div class="header">
+            <div class="h_l"></div>
+            <div class="h_r"></div>
+          </div>
+          <div class="content">
+		  <!-- {foreach from=get_package_list('客厅') item=package_goods name=package_list} -->
+            <div class="item clearfix goods_much js_item" data-index="0" data-load="ture" style="height:250px" id="{$package_goods.act_id}">
+              <div class="goods_count icon">此套装：{$package_goods.goods_count}件</div>
+              <div></div>
+              <div class="item_l Left">
+                <div class="stage"> <a class="left icon" id="JS_move_left_{$package_goods.act_id}" style="display:none" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',1)"></a> {if $package_goods.goods_count > 3}<a class="right icon" id="JS_move_right_{$package_goods.act_id}" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',-1)"></a>{/if}
+                  <table id="JS_table_{$package_goods.act_id}">
+                    <tr>
+					<!-- {foreach from=$package_goods.goods_list item=goods_list name=package_goods_goods_list} -->
+                      <td><div class="img"> <a href="goods-{$goods_list.goods_id}.html" title="{$goods_list.goods_name}" target="_blank"> <img src="images/blank.gif" data-src="{$goods_list.goods_thumb}" width="200" height="132" /> </a> </div>
+                        <p class="info c"> <a href="goods-{$goods_list.goods_id}.html" title="{$goods_list.goods_name}" target="_blank">{$goods_list.goods_name}</a><br/>
+                          <span class="gray">本站价：</span><span class="yen red">{$goods_list.rank_price}</span><span class="num yen">×{$goods_list.goods_number}</span> </p></td>
+					{if !$smarty.foreach.package_goods_goods_list.last}	  
+                      <td><span class="plus icon"></span> </td>
+					{/if}  
+					<!-- {/foreach} -->  
+                     
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="item_r Right clearfix">
+                <div class="Left"> <span class="equal icon"></span> </div>
+                <div class="Right">
+                  <h4><a href="javascript:;" title="{$package_goods.saving}" target="_blank">{$package_goods.act_name}</a></h4>
+                  <p> <span class="price_tip">套装价：</span><br/>
+                    <span class="red yen"><span class="price">{$package_goods.package_price}</span> <br/>
+                    <del class="yen gray">{$package_goods.subtotal}</del><br/>
+                    <span class="save_icon icon"></span><span class="yen red">{$package_goods.saving}</span> </p>
+                  <a href="javascript:addPackageToCart({$package_goods.act_id})" title="{$package_goods.act_name}" data-id="{$package_goods.act_id}" class="buy_icon icon"></a> </div>
+              </div>
+            </div>
+		  <!-- {/foreach} -->	
+          </div>
+          <div class="footer"></div>
+        </div>
+      </div>
+      <div class="floor" id="JS_floor_2" name="JS_floor_2">
+        <div class="title"> <strong> <i class="f2"></i><span class="floor_name">餐厅</span> </strong> </div>
+        <div class="body">
+          <div class="header">
+            <div class="h_l"></div>
+            <div class="h_r"></div>
+          </div>
+          <div class="content">
+		  <!-- {foreach from=get_package_list('餐厅') item=package_goods name=package_list} -->
+            <div class="item clearfix goods_much js_item" data-index="0" data-load="ture" style="height:250px" id="{$package_goods.act_id}">
+              <div class="goods_count icon">此套装：{$package_goods.goods_count}件</div>
+              <div></div>
+              <div class="item_l Left">
+                <div class="stage"> <a class="left icon" id="JS_move_left_{$package_goods.act_id}" style="display:none" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',1)"></a> {if $package_goods.goods_count > 3}<a class="right icon" id="JS_move_right_{$package_goods.act_id}" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',-1)"></a>{/if}
+                  <table id="JS_table_{$package_goods.act_id}">
+                    <tr>
+					<!-- {foreach from=$package_goods.goods_list item=goods_list name=package_goods_goods_list} -->
+                      <td><div class="img"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank"> <img src="images/blank.gif" data-src="{$goods_list.goods_thumb}" width="200" height="132" /> </a> </div>
+                        <p class="info c"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank">{$goods_list.goods_name}</a><br/>
+                          <span class="gray">本站价：</span><span class="yen red">{$goods_list.rank_price}</span><span class="num yen">×{$goods_list.goods_number}</span> </p></td>
+					{if !$smarty.foreach.package_goods_goods_list.last}	  
+                      <td><span class="plus icon"></span> </td>
+					{/if}  
+					<!-- {/foreach} -->  
+                     
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="item_r Right clearfix">
+                <div class="Left"> <span class="equal icon"></span> </div>
+                <div class="Right">
+                  <h4><a href="javascript:;" title="{$package_goods.saving}" target="_blank">{$package_goods.act_name}</a></h4>
+                  <p> <span class="price_tip">套装价：</span><br/>
+                    <span class="red yen"><span class="price">{$package_goods.package_price}</span> <br/>
+                    <del class="yen gray">{$package_goods.subtotal}</del><br/>
+                    <span class="save_icon icon"></span><span class="yen red">{$package_goods.saving}</span> </p>
+                  <a href="javascript:addPackageToCart({$package_goods.act_id})" title="{$package_goods.act_name}" data-id="{$package_goods.act_id}" class="buy_icon icon"></a> </div>
+              </div>
+            </div>
+		  <!-- {/foreach} -->	
+          </div>
+          <div class="footer"></div>
+        </div>
+      </div>
+      <div class="floor" id="JS_floor_3" name="JS_floor_3">
+        <div class="title"> <strong> <i class="f3"></i><span class="floor_name">卧房</span> </strong> </div>
+        <div class="body">
+          <div class="header">
+            <div class="h_l"></div>
+            <div class="h_r"></div>
+          </div>
+          <div class="content">
+		  <!-- {foreach from=get_package_list('卧房') item=package_goods name=package_list} -->
+            <div class="item clearfix goods_much js_item" data-index="0" data-load="ture" style="height:250px" id="{$package_goods.act_id}">
+              <div class="goods_count icon">此套装：{$package_goods.goods_count}件</div>
+              <div></div>
+              <div class="item_l Left">
+                <div class="stage"> <a class="left icon" id="JS_move_left_{$package_goods.act_id}" style="display:none" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',1)"></a> {if $package_goods.goods_count > 3}<a class="right icon" id="JS_move_right_{$package_goods.act_id}" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',-1)"></a>{/if}
+                  <table id="JS_table_{$package_goods.act_id}">
+                    <tr>
+					<!-- {foreach from=$package_goods.goods_list item=goods_list name=package_goods_goods_list} -->
+                      <td><div class="img"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank"> <img src="images/blank.gif" data-src="{$goods_list.goods_thumb}" width="200" height="132" /> </a> </div>
+                        <p class="info c"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank">{$goods_list.goods_name}</a><br/>
+                          <span class="gray">本站价：</span><span class="yen red">{$goods_list.rank_price}</span><span class="num yen">×{$goods_list.goods_number}</span> </p></td>
+					{if !$smarty.foreach.package_goods_goods_list.last}	  
+                      <td><span class="plus icon"></span> </td>
+					{/if}  
+					<!-- {/foreach} -->  
+                     
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="item_r Right clearfix">
+                <div class="Left"> <span class="equal icon"></span> </div>
+                <div class="Right">
+                  <h4><a href="javascript:;" title="{$package_goods.saving}" target="_blank">{$package_goods.act_name}</a></h4>
+                  <p> <span class="price_tip">套装价：</span><br/>
+                    <span class="red yen"><span class="price">{$package_goods.package_price}</span> <br/>
+                    <del class="yen gray">{$package_goods.subtotal}</del><br/>
+                    <span class="save_icon icon"></span><span class="yen red">{$package_goods.saving}</span> </p>
+                  <a href="javascript:addPackageToCart({$package_goods.act_id})" title="{$package_goods.act_name}" data-id="{$package_goods.act_id}" class="buy_icon icon"></a> </div>
+              </div>
+            </div>
+		  <!-- {/foreach} -->	
+          </div>
+          <div class="footer"></div>
+        </div>
+      </div>
+      <div class="floor" id="JS_floor_4" name="JS_floor_4">
+        <div class="title"> <strong> <i class="f4"></i><span class="floor_name">儿童房</span> </strong> </div>
+        <div class="body">
+          <div class="header">
+            <div class="h_l"></div>
+            <div class="h_r"></div>
+          </div>
+          <div class="content">
+		  <!-- {foreach from=get_package_list('儿童房') item=package_goods name=package_list} -->
+            <div class="item clearfix goods_much js_item" data-index="0" data-load="ture" style="height:250px" id="{$package_goods.act_id}">
+              <div class="goods_count icon">此套装：{$package_goods.goods_count}件</div>
+              <div></div>
+              <div class="item_l Left">
+                <div class="stage"> <a class="left icon" id="JS_move_left_{$package_goods.act_id}" style="display:none" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',1)"></a> {if $package_goods.goods_count > 3}<a class="right icon" id="JS_move_right_{$package_goods.act_id}" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',-1)"></a>{/if}
+                  <table id="JS_table_{$package_goods.act_id}">
+                    <tr>
+					<!-- {foreach from=$package_goods.goods_list item=goods_list name=package_goods_goods_list} -->
+                      <td><div class="img"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank"> <img src="images/blank.gif" data-src="{$goods_list.goods_thumb}" width="200" height="132" /> </a> </div>
+                        <p class="info c"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank">{$goods_list.goods_name}</a><br/>
+                          <span class="gray">本站价：</span><span class="yen red">{$goods_list.rank_price}</span><span class="num yen">×{$goods_list.goods_number}</span> </p></td>
+					{if !$smarty.foreach.package_goods_goods_list.last}	  
+                      <td><span class="plus icon"></span> </td>
+					{/if}  
+					<!-- {/foreach} -->  
+                     
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="item_r Right clearfix">
+                <div class="Left"> <span class="equal icon"></span> </div>
+                <div class="Right">
+                  <h4><a href="javascript:;" title="{$package_goods.saving}" target="_blank">{$package_goods.act_name}</a></h4>
+                  <p> <span class="price_tip">套装价：</span><br/>
+                    <span class="red yen"><span class="price">{$package_goods.package_price}</span> <br/>
+                    <del class="yen gray">{$package_goods.subtotal}</del><br/>
+                    <span class="save_icon icon"></span><span class="yen red">{$package_goods.saving}</span> </p>
+                  <a href="javascript:addPackageToCart({$package_goods.act_id})" title="{$package_goods.act_name}" data-id="{$package_goods.act_id}" class="buy_icon icon"></a> </div>
+              </div>
+            </div>
+		  <!-- {/foreach} -->	
+          </div>
+          <div class="footer"></div>
+        </div>
+      </div>
+      <div class="floor" id="JS_floor_5" name="JS_floor_5">
+        <div class="title"> <strong> <i class="f5"></i><span class="floor_name">书房</span> </strong> </div>
+        <div class="body">
+          <div class="header">
+            <div class="h_l"></div>
+            <div class="h_r"></div>
+          </div>
+          <div class="content">
+		  <!-- {foreach from=get_package_list('书房') item=package_goods name=package_list} -->
+            <div class="item clearfix goods_much js_item" data-index="0" data-load="ture" style="height:250px" id="{$package_goods.act_id}">
+              <div class="goods_count icon">此套装：{$package_goods.goods_count}件</div>
+              <div></div>
+              <div class="item_l Left">
+                <div class="stage"> <a class="left icon" id="JS_move_left_{$package_goods.act_id}" style="display:none" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',1)"></a> {if $package_goods.goods_count > 3}<a class="right icon" id="JS_move_right_{$package_goods.act_id}" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',-1)"></a>{/if}
+                  <table id="JS_table_{$package_goods.act_id}">
+                    <tr>
+					<!-- {foreach from=$package_goods.goods_list item=goods_list name=package_goods_goods_list} -->
+                      <td><div class="img"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank"> <img src="images/blank.gif" data-src="{$goods_list.goods_thumb}" width="200" height="132" /> </a> </div>
+                        <p class="info c"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank">{$goods_list.goods_name}</a><br/>
+                          <span class="gray">本站价：</span><span class="yen red">{$goods_list.rank_price}</span><span class="num yen">×{$goods_list.goods_number}</span> </p></td>
+					{if !$smarty.foreach.package_goods_goods_list.last}	  
+                      <td><span class="plus icon"></span> </td>
+					{/if}  
+					<!-- {/foreach} -->  
+                     
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="item_r Right clearfix">
+                <div class="Left"> <span class="equal icon"></span> </div>
+                <div class="Right">
+                  <h4><a href="javascript:;" title="{$package_goods.saving}" target="_blank">{$package_goods.act_name}</a></h4>
+                  <p> <span class="price_tip">套装价：</span><br/>
+                    <span class="red yen"><span class="price">{$package_goods.package_price}</span> <br/>
+                    <del class="yen gray">{$package_goods.subtotal}</del><br/>
+                    <span class="save_icon icon"></span><span class="yen red">{$package_goods.saving}</span> </p>
+                  <a href="javascript:addPackageToCart({$package_goods.act_id})" title="{$package_goods.act_name}" data-id="{$package_goods.act_id}" class="buy_icon icon"></a> </div>
+              </div>
+            </div>
+		  <!-- {/foreach} -->	
+          </div>
+          <div class="footer"></div>
+        </div>
+      </div>
+      <div class="floor" id="JS_floor_6" name="JS_floor_6">
+        <div class="title"> <strong> <i class="f6"></i><span class="floor_name">户外家具</span> </strong> </div>
+        <div class="body">
+          <div class="header">
+            <div class="h_l"></div>
+            <div class="h_r"></div>
+          </div>
+          <div class="content">
+		  <!-- {foreach from=get_package_list('户外家具') item=package_goods name=package_list} -->
+            <div class="item clearfix goods_much js_item" data-index="0" data-load="ture" style="height:250px" id="{$package_goods.act_id}">
+              <div class="goods_count icon">此套装：{$package_goods.goods_count}件</div>
+              <div></div>
+              <div class="item_l Left">
+                <div class="stage"> <a class="left icon" id="JS_move_left_{$package_goods.act_id}" style="display:none" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',1)"></a> {if $package_goods.goods_count > 3}<a class="right icon" id="JS_move_right_{$package_goods.act_id}" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',-1)"></a>{/if}
+                  <table id="JS_table_{$package_goods.act_id}">
+                    <tr>
+					<!-- {foreach from=$package_goods.goods_list item=goods_list name=package_goods_goods_list} -->
+                      <td><div class="img"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank"> <img src="images/blank.gif" data-src="{$goods_list.goods_thumb}" width="200" height="132" /> </a> </div>
+                        <p class="info c"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank">{$goods_list.goods_name}</a><br/>
+                          <span class="gray">本站价：</span><span class="yen red">{$goods_list.rank_price}</span><span class="num yen">×{$goods_list.goods_number}</span> </p></td>
+					{if !$smarty.foreach.package_goods_goods_list.last}	  
+                      <td><span class="plus icon"></span> </td>
+					{/if}  
+					<!-- {/foreach} -->  
+                     
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="item_r Right clearfix">
+                <div class="Left"> <span class="equal icon"></span> </div>
+                <div class="Right">
+                  <h4><a href="javascript:;" title="{$package_goods.saving}" target="_blank">{$package_goods.act_name}</a></h4>
+                  <p> <span class="price_tip">套装价：</span><br/>
+                    <span class="red yen"><span class="price">{$package_goods.package_price}</span> <br/>
+                    <del class="yen gray">{$package_goods.subtotal}</del><br/>
+                    <span class="save_icon icon"></span><span class="yen red">{$package_goods.saving}</span> </p>
+                  <a href="javascript:addPackageToCart({$package_goods.act_id})" title="{$package_goods.act_name}" data-id="{$package_goods.act_id}" class="buy_icon icon"></a> </div>
+              </div>
+            </div>
+		  <!-- {/foreach} -->	
+          </div>
+          <div class="footer"></div>
+        </div>
+      </div>
+      <div class="floor" id="JS_floor_7" name="JS_floor_7">
+        <div class="title"> <strong> <i class="f7"></i><span class="floor_name">建材</span> </strong> </div>
+        <div class="body">
+          <div class="header">
+            <div class="h_l"></div>
+            <div class="h_r"></div>
+          </div>
+          <div class="content">
+		  <!-- {foreach from=get_package_list('建材') item=package_goods name=package_list} -->
+            <div class="item clearfix goods_much js_item" data-index="0" data-load="ture" style="height:250px" id="{$package_goods.act_id}">
+              <div class="goods_count icon">此套装：{$package_goods.goods_count}件</div>
+              <div></div>
+              <div class="item_l Left">
+                <div class="stage"> <a class="left icon" id="JS_move_left_{$package_goods.act_id}" style="display:none" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',1)"></a> {if $package_goods.goods_count > 3}<a class="right icon" id="JS_move_right_{$package_goods.act_id}" onClick="tz_move('{$package_goods.act_id}','{$package_goods.goods_count}',-1)"></a>{/if}
+                  <table id="JS_table_{$package_goods.act_id}">
+                    <tr>
+					<!-- {foreach from=$package_goods.goods_list item=goods_list name=package_goods_goods_list} -->
+                      <td><div class="img"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank"> <img src="images/blank.gif" data-src="{$goods_list.goods_thumb}" width="200" height="132" /> </a> </div>
+                        <p class="info c"> <a href="goods.php?id={$goods_list.goods_id}" title="{$goods_list.goods_name}" target="_blank">{$goods_list.goods_name}</a><br/>
+                          <span class="gray">本站价：</span><span class="yen red">{$goods_list.rank_price}</span><span class="num yen">×{$goods_list.goods_number}</span> </p></td>
+					{if !$smarty.foreach.package_goods_goods_list.last}	  
+                      <td><span class="plus icon"></span> </td>
+					{/if}  
+					<!-- {/foreach} -->  
+                     
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="item_r Right clearfix">
+                <div class="Left"> <span class="equal icon"></span> </div>
+                <div class="Right">
+                  <h4><a href="javascript:;" title="{$package_goods.saving}" target="_blank">{$package_goods.act_name}</a></h4>
+                  <p> <span class="price_tip">套装价：</span><br/>
+                    <span class="red yen"><span class="price">{$package_goods.package_price}</span> <br/>
+                    <del class="yen gray">{$package_goods.subtotal}</del><br/>
+                    <span class="save_icon icon"></span><span class="yen red">{$package_goods.saving}</span> </p>
+                  <a href="javascript:addPackageToCart({$package_goods.act_id})" title="{$package_goods.act_name}" data-id="{$package_goods.act_id}" class="buy_icon icon"></a> </div>
+              </div>
+            </div>
+		  <!-- {/foreach} -->	
+          </div>
+          <div class="footer"></div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="th_float_link" id="JS_th_float_link">
+      <div class="link_list"> 
+	  <a href="#JS_floor_1"><span class="keting item">客厅</span><span>(<i><font class='pack_count1'>0</font></i>)</span></a> <b></b> 
+	  <a href="#JS_floor_2"><span class="canting item">餐厅</span><span>(<i><font class='pack_count1'>0</font></i>)</span></a> <b></b> 
+	  <a href="#JS_floor_3"><span class="wofang item">卧房</span><span>(<i><font class='pack_count1'>0</font></i>)</span></a> <b></b> 
+	  <a href="#JS_floor_4"><span class="etf item">儿童房</span><span>(<i><font class='pack_count1'>0</font></i>)</span></a> <b></b> 
+	  <a href="#JS_floor_5"><span class="shufang item">书房</span><span>(<i><font class='pack_count1'>0</font></i>)</span></a> <b></b> 
+	  <a href="#JS_floor_6"><span class="hwjj item">户外家具</span><span>(<i><font class='pack_count1'>0</font></i>)</span></a> <b></b> 
+	  <a href="#JS_floor_7"><span class="other item">建材</span><span>(<i><font class='pack_count1'>0</font></i>)</span></a> <b></b> </div>
+      <div class="footer_bg"></div>
+    </div>
+  </div>
+</div>
+
+<script language="javascript">
+    var pack_sum = 0;
+	$('.floor .content').each(
+		function(i){
+			var l = $(this).children().length;
+			pack_sum += l;
+			set_pack_count(i, l);
+		}
+	);
+	$('.pack_num').html(pack_sum);
+	function set_pack_count(index, count){
+		$('.pack_count').each(
+			function(i){
+				if (i == index){
+					this.innerHTML = count;
+				}
+			}
+		);
+		$('.pack_count1').each(
+			function(i){
+				if (i == index){
+					this.innerHTML = count;
+				}
+			}
+		);
+	}
+</script>
+	
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+<script>window.M = window.M || {};if($.addToCart)M.addToCart = $.addToCart</script>
+<script type="text/javascript">
+var tz = function( setting ){
+	this.setting = setting;
+	this.data = false;
+	this.isShow = false;
+}
+
+tz.prototype = {
+	constructor:tz,
+	isNeedShow:function(h_s){
+		//if( !this.data )return false;
+		var h_v,imgTop;
+		h_v=document.documentElement.clientHeight;
+		imgTop = this.setting._offsetTop;
+		if( h_v+h_s>imgTop && imgTop+this.setting._height>h_s )
+		{
+			return true;
+		}
+		return false;
+	},
+	show:function(){
+		var tpl=[];
+		var gl = this.data;
+		tpl.push('<div class="goods_count icon">此套装：'+gl.all_number+'件</div><div></div> <div class="item_l Left"> <div class="stage"> ');
+		if(gl.classe_number > 3)
+			tpl.push('<a class="left icon"id="JS_move_left_'+gl.id+'" style="display:none" onclick="tz_move('+gl.id+','+gl.classe_number+',1)" ></a> <a class="right icon"  id="JS_move_right_'+gl.id+'" onclick="tz_move('+gl.id+','+gl.classe_number+',-1)"></a> ');
+		tpl.push(' <table id="JS_table_'+gl.id+'"><tr>');
+		
+		tpl.push('</tr></table></div></div>');
+
+
+		tpl.push('<div class="item_r Right');
+		if(gl.favorable_postfree)
+		{
+		 tpl.push(' bg_wl');
+		}
+		tpl.push(' clearfix">');
+		tpl.push('<div class="Left"><span class="equal icon"></span></div>');
+		tpl.push('<div class="Right"><h4><a href="'+gl.url+'" title="'+gl.goods_name+'" target="_blank">'+gl.goods_name+'</a></h4><p><span class="price_tip">套装价：</span><br/><span class="red yen">&yen;<span class="price">'+gl.favorable_show_price.show_price+'.00</span>');
+		if(gl.favorable_show_price.nature_favorable_price > 0)
+		{
+			tpl.push('<br/><del class="yen gray">¥'+gl.favorable_show_price.nature_total_price+'</del><br/> <span class="save_icon icon"></span><span class="yen red">'+gl.favorable_show_price.nature_favorable_price+'</span>');
+		}
+		if(gl.favorable_show_price.discount_type == 1 && gl.favorable_show_price.discount_price > 0)
+		{
+			tpl.push('<br/><span class="back_icon save_icon icon"></span><span class="yen red">&yen;'+gl.favorable_show_price.discount_price+'</span>');
+		}
+		tpl.push('</p><a href="'+gl.url+'" title="'+gl.goods_name+'" data-id="');
+		if(gl.goods_id)
+		{
+		tpl.push(''+gl.goods_id+'');
+		}
+		else{
+		tpl.push(''+gl.id+'');
+		}
+		tpl.push(' target="_blank" class="buy_icon icon"></a></div></div>');
+		var htmlStr=tpl.join('');
+		this.setting.dom.innerHTML = htmlStr;
+		delete TZ.waitToShow[this.setting.id];
+		if( TZ.isEmptyObj( TZ.waitToShow ) ){
+			TZ.scrollresponse = function(){}
+		}else{
+			setTimeout( function(){ 
+				for(var k in TZ.waitToShow){
+					if( TZ.waitToShow[k] && TZ.waitToShow[k].data ){
+						TZ.waitToShow[k].show();
+						break;
+					}
+				}
+			} , TZ.backShowTimer );
+			
+		}
+	}
+}
+
+;(function(M){
+	var TZ = window.TZ = {
+		backShowTimer : 4000,
+		all:{},
+		waitToShow:{},
+		waitToData:{},
+		scrollresponse:function(w_scrolltop){
+			if(window.TZ_timer) clearTimeout(window.TZ_timer);
+			window.TZ_timer=setTimeout(function(){
+				var tmpConut = 0;
+				var list = [];
+				var listToload = [];
+				var timer;
+				for(var i in TZ.waitToShow)
+				{   
+					if( TZ.waitToShow[i] && TZ.waitToShow[i].isNeedShow( w_scrolltop ) ){
+						list.push(i);
+					}
+					if( list.length > 4 )break;
+				}
+				if( list.length ){
+					for(var i = 0 ,ii = list.length ; i < ii ;i ++){
+						var id = list[i];
+						if( TZ.waitToShow[id] && TZ.waitToShow[id].data && !TZ.waitToShow[id].isShow ){
+							TZ.waitToShow[id].show();
+							timer = 4000;
+						}else if( TZ.waitToShow[id] && !TZ.waitToShow[id].data ){
+							listToload.push( list[i] );
+							timer = 8000;
+						}
+					}
+				}
+				if( listToload.length ){
+					TZ.loadData( listToload , function( listBack , json ){
+						for(var k = 0, kk = listBack.length ;  k<kk ; k++){
+							var id = listBack[k];
+							if( TZ.waitToShow && TZ.waitToShow[id] && !TZ.waitToShow[id].isShow ){
+								TZ.waitToShow[id].show();
+							}
+						}
+					} , true );
+				}
+				if( timer ){
+					TZ.backShowTimer = timer;
+					setTimeout(function(){
+						TZ.backShowTimer = 1000;
+					},timer)
+				}
+			},300);
+		},
+		loadData:function( list , callback , must ){
+			must && window._tzAjaxHolder && window._tzAjaxHolder.request && window._tzAjaxHolder.request.abort();
+			window._tzAjaxHolder = M.ajax({
+				url:'/mem_favorable/?act=ajax_load',
+				data:'offset='+list.join(','),
+				dataType:'json',
+				success:function(json){
+					for(var i = 0, ii = list.length ; i<ii;i++){
+						var id = list[i];
+						if( json[id] && TZ.waitToData[id] && !TZ.waitToData[id].data ){
+							TZ.waitToData[id].data = json[ id ];
+							delete TZ.waitToData[id];
+						}
+					}
+					window._tzAjaxHolder = null;
+					if( callback )callback( list , json );
+					setTimeout( TZ.backLoadData , 500 );
+				},error:function(){
+					window._tzAjaxHolder = null;
+				}
+			});
+		},
+		backLoadData:function(){//空闲时背景加载
+			var list = [];
+			for( var k in TZ.waitToData ){
+				list.push( k );
+				if( list.length >= 30 )break;
+			}
+			if( list.length ){
+				TZ.loadData( list );
+			}else{
+				for(var k in TZ.waitToShow){
+					TZ.backShowTimer = 500;
+					TZ.waitToShow[k].show();
+					break;
+				}
+			}
+		},
+		isEmptyObj:function(obj){
+			for(var k in obj){
+				return false;
+			}
+			return true;
+		}
+	}
+	var items=M.$('.js_item');
+	for(var i=0,len=items.length;i<len;i++)
+	{
+		var item=items[i];
+		if(!item.getAttribute('data-load'))
+		{
+			TZ.all[item.id] = TZ.waitToShow[item.id] = TZ.waitToData[item.id] = new tz( {
+				target:item,
+				data:false,
+				id:item.id,
+				dom : item,
+				_offsetTop:M.offsetTop(item),
+				_height:parseInt(item.style.height )
+			} );
+		}
+	};
+	var floatDom=M.$('#JS_th_float_link');
+	var f_offsetTop=M.offsetTop(M.$('#JS_main'));
+	var timer=null;
+
+	//获取楼层高度
+	var _floorTop={};
+	var floors=floatDom.getElementsByTagName('a');
+	for(var i=0,len=floors.length;i<len;i++)
+	{
+		var dom=M.$('#'+'JS_floor_'+(i+1)),_offsetTop;
+		if(dom)
+		{
+			var minHeight=M.offsetTop(dom)-225;
+			var maxHeight=minHeight+parseInt(dom.offsetHeight);
+			_floorTop['floor_'+i]={
+				min_H:minHeight,
+				max_H:maxHeight
+			}
+		}
+	}
+	M.addHandler(window,'scroll',scrollfunction);
+	M.addHandler(window,'resize',scrollfunction);
+	function scrollfunction(){
+		w_scrolltop= window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+		if(w_scrolltop>f_offsetTop)
+			floatDom.style.display="block";
+		else
+			floatDom.style.display="none";
+		for(var i=0,len=floors.length;i<len;i++)
+		{
+			var item=_floorTop['floor_'+i];
+			if(w_scrolltop>item.min_H&&w_scrolltop<item.max_H)
+				M.addClass(floors[i],'show');
+			else
+				M.removeClass(floors[i],'show');
+		}
+		TZ.scrollresponse( w_scrolltop );
+	}
+	scrollfunction();
+	M.lazyImg.start('lazy',{callback:TZ.backLoadData});
+})(M);
+function tz_move( id , maxStep , to ){
+	var table = M.$('#JS_table_'+id);
+	var left  = M.$('#JS_move_left_'+id);
+	var right = M.$('#JS_move_right_'+id);
+	maxStep = maxStep - 3;
+	if(table && left && right){
+		var now = table._tzNow || 0;
+		to = now + to ;
+		if( to > 0 )to = 0;
+		if( to < 0 - maxStep ) to = 0 - maxStep;
+		M.Animate( table , {'marginLeft':to*238+'px'} );
+		if( to == 0 ){
+			left.style.display = 'none'
+		}else{
+			left.style.display = ''
+		}
+		if( to == 0 - maxStep ){
+			right.style.display = 'none'
+		}else{
+			right.style.display = ''
+		}
+		table._tzNow = to;
+	}
+}
+</script>
+</body>
+</html>
+<!--
+LDZ:2013-10-18 16:29:23
+-->

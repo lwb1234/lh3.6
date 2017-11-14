@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/admin/templates/goodHs_info.htm" line="795" mnemonic="1" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f955b7be-5999-4a74-8301-e1a4fa3bba75" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="init.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/init.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="927">
+              <caret line="303" column="15" lean-forward="true" selection-start-line="303" selection-start-column="15" selection-end-line="303" selection-end-column="15" />
+              <folding>
+                <marker date="1496816586000" expanded="true" signature="3283:3333" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-108">
+              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lib_base.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/lib_base.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18144">
+              <caret line="683" column="60" lean-forward="false" selection-start-line="683" selection-start-column="45" selection-end-line="683" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>get_</find>
+      <find>ad</find>
+      <find>tempWrap</find>
+      <find>header clearfix</find>
+      <find>addToCart</find>
+      <find>.dwt</find>
+      <find>limit</find>
+      <find>JS_side_stage</find>
+      <find>get_flash_xml</find>
+      <find>group_buy</find>
+      <find>edit</find>
+      <find>$group_buy</find>
+      <find>seckill_goods</find>
+      <find>{$group_buy</find>
+      <find>$group</find>
+      <find>$seckill_buy</find>
+      <find>seckill_buy_info</find>
+      <find>res</find>
+      <find>group</find>
+      <find>insert_update</find>
+      <find>reset</find>
+      <find>add</find>
+      <find>$seckill_buy_id</find>
+      <find>ext_</find>
+      <find>get_advlist_by_id</find>
+      <find>navigato</find>
+      <find>allMenu Left</find>
+      <find>main_new</find>
+      <find>region</find>
+      <find />
+    </findStrings>
+    <replaceStrings>
+      <replace>户</replace>
+      <replace>商户</replace>
+      <replace>category_listH</replace>
+      <replace>cat_listH</replace>
+      <replace>goodHs</replace>
+      <replace>div</replace>
+      <replace>themes/meilele/images</replace>
+      <replace>智优国际</replace>
+      <replace>upload/fengjiao/</replace>
+      <replace>20171026</replace>
+      <replace>fuheweishengsu</replace>
+      <replace>yeshengyuyou</replace>
+      <replace>yitigaimei</replace>
+      <replace>document.getElementById('JS_buy_num')</replace>
+      <replace>seckill_goods</replace>
+      <replace>{$seckill</replace>
+      <replace>seckill_buy</replace>
+      <replace>$seckill</replace>
+      <replace>seckill</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/css/goods_wide.min.css" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/css/mll_common.min.css" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/temp/compiled/goods.dwt.php" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/library/page_header_zy.lbi" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/index.dwt" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/library/index_ad.lbi" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/style.css" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/article_cat.dwt" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/temp/compiled/article.dwt.php" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/article.dwt" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/article.php" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/index.php" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/search.dwt" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/js/common.js" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/js/tuangou_detail.min.js" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/includes/lib_order.php" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/flow.php" />
+        <option value="$PROJECT_DIR$/themes/meilele/library/banner.lbi" />
+        <option value="$PROJECT_DIR$/themes/meilele/js/index.js" />
+        <option value="$PROJECT_DIR$/themes/meilele/library/page_header.lbi" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele_old/goods.dwt" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/themes/meilele/goods.dwt" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/1.html" />
+        <option value="$PROJECT_DIR$/goods.php" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/includes/lib_main.php" />
+        <option value="$PROJECT_DIR$/article.php" />
+        <option value="$PROJECT_DIR$/themes/meilele/library/seckill.lbi" />
+        <option value="$PROJECT_DIR$/themes/meilele/css/seckill_style.css" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/1.php" />
+        <option value="$PROJECT_DIR$/themes/meilele/init.php" />
+        <option value="$PROJECT_DIR$/themes/meilele/goods.dwt" />
+        <option value="$PROJECT_DIR$/admin/templates/seckill_list.htm" />
+        <option value="$PROJECT_DIR$/admin/templates/seckill_goods_info.htm" />
+        <option value="$PROJECT_DIR$/admin/templates/group_buy_info.htm" />
+        <option value="$PROJECT_DIR$/includes/lib_goods.php" />
+        <option value="$PROJECT_DIR$/admin/group_buy.php" />
+        <option value="$PROJECT_DIR$/admin/seckill_goods.php" />
+        <option value="$PROJECT_DIR$/admin/templates/seckill_buy_info.htm" />
+        <option value="$PROJECT_DIR$/includes/lib_main.php" />
+        <option value="$PROJECT_DIR$/seckill_buy.php" />
+        <option value="$PROJECT_DIR$/admin/includes/inc_menu.php" />
+        <option value="$PROJECT_DIR$/includes/lib_common.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/themes/meilele/index.dwt" />
+        <option value="$PROJECT_DIR$/admin/includes/init.php" />
+        <option value="$PROJECT_DIR$/includes/cls_iconv.php" />
+        <option value="$PROJECT_DIR$/../zhiyouguoji_2.73/includes/lib_base.php" />
+        <option value="$PROJECT_DIR$/admin_shangjia/index.php" />
+        <option value="$PROJECT_DIR$/admin_shangjia/includes/init.php" />
+        <option value="$PROJECT_DIR$/includes/cls_template.php" />
+        <option value="$PROJECT_DIR$/includes/lib_base.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="29" />
+    <option name="width" value="1399" />
+    <option name="height" value="920" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="lh3.6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lhjjc" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="lh3.6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lhjjc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="lh3.6" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="lh3.6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lhjjc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="lh3.6" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="data" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="lh3.6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lhjjc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="zhiyouguoji_2.73" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lh3.6" type="cbb8eebc:String" user="lh3.6" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lh3.6" type="cbb8eebc:String" user="lh3.6" />
+              <item name="admin" type="cbb8eebc:String" user="admin" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lh3.6" type="cbb8eebc:String" user="lh3.6" />
+              <item name="admin" type="cbb8eebc:String" user="admin" />
+              <item name="templates" type="cbb8eebc:String" user="templates" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zhiyouguoji_2.73" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\lh3.6\admin\templates" />
+      <recent name="D:\wamp64\www\lh3.6\themes\meilele" />
+      <recent name="D:\wamp64\www\zhiyouguoji_2.73\themes\meilele\js" />
+      <recent name="D:\wamp64\www\zhiyouguoji_2.73\themes\meilele\images" />
+      <recent name="D:\wamp64\www\zhiyouguoji_2.73\themes\meilele\php" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f955b7be-5999-4a74-8301-e1a4fa3bba75" name="Default" comment="" />
+      <created>1505280571784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1505280571784</updated>
+      <workItem from="1505280579890" duration="11803000" />
+      <workItem from="1505348366069" duration="3850000" />
+      <workItem from="1505352771032" duration="21739000" />
+      <workItem from="1505434736595" duration="1658000" />
+      <workItem from="1507513981621" duration="18817000" />
+      <workItem from="1507594436834" duration="20410000" />
+      <workItem from="1507681268686" duration="19333000" />
+      <workItem from="1507769148097" duration="21925000" />
+      <workItem from="1507853651670" duration="25239000" />
+      <workItem from="1507940862586" duration="20080000" />
+      <workItem from="1508112975656" duration="19738000" />
+      <workItem from="1508199469629" duration="23866000" />
+      <workItem from="1508286848701" duration="22282000" />
+      <workItem from="1508373658695" duration="21748000" />
+      <workItem from="1508458813823" duration="23550000" />
+      <workItem from="1508545528685" duration="23415000" />
+      <workItem from="1508718925340" duration="12436000" />
+      <workItem from="1508804317723" duration="16442000" />
+      <workItem from="1508891216755" duration="22097000" />
+      <workItem from="1508977428396" duration="24896000" />
+      <workItem from="1509063858194" duration="24961000" />
+      <workItem from="1509149747313" duration="19505000" />
+      <workItem from="1509322028659" duration="15452000" />
+      <workItem from="1509408997542" duration="21299000" />
+      <workItem from="1509495682862" duration="22086000" />
+      <workItem from="1509581946118" duration="19006000" />
+      <workItem from="1509668035259" duration="17594000" />
+      <workItem from="1509755022348" duration="17724000" />
+      <workItem from="1509927582192" duration="1114000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="534065000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="29" y="0" width="1399" height="920" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21041214" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2176428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="35" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/admin/templates/group_buy_list.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/templates/group_buy_info.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="75" column="12" lean-forward="false" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/inc_constant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="1456" column="32" lean-forward="false" selection-start-line="1456" selection-start-column="17" selection-end-line="1456" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/templates/seckill_buy_info.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/group_buy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="627" column="36" lean-forward="true" selection-start-line="627" selection-start-column="36" selection-end-line="627" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="1102" column="34" lean-forward="false" selection-start-line="1102" selection-start-column="34" selection-end-line="1102" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/templates/pageheader.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1863">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/templates/store_goods.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seckill_buy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="290" column="5" lean-forward="false" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/categoryH.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/templates/index.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/inc_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="29" column="86" lean-forward="true" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/store_category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/meilele/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="80" column="43" lean-forward="false" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/meilele/library/page_header.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2997">
+          <caret line="111" column="30" lean-forward="false" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/meilele_2.73/index.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="181" column="10" lean-forward="true" selection-start-line="181" selection-start-column="10" selection-end-line="181" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/meilele/index.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3329">
+          <caret line="124" column="10" lean-forward="false" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/seckill_goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="255" column="6" lean-forward="false" selection-start-line="255" selection-start-column="6" selection-end-line="255" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/pcre/pcre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="82" column="9" lean-forward="false" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="282" column="9" lean-forward="false" selection-start-line="282" selection-start-column="9" selection-end-line="282" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="1317" column="9" lean-forward="false" selection-start-line="1317" selection-start-column="9" selection-end-line="1317" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="1023" column="9" lean-forward="false" selection-start-line="1023" selection-start-column="9" selection-end-line="1023" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../zhiyouguoji_2.73/data/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="850" column="9" lean-forward="false" selection-start-line="850" selection-start-column="9" selection-end-line="850" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_7.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="520" column="9" lean-forward="false" selection-start-line="520" selection-start-column="9" selection-end-line="520" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="542" column="9" lean-forward="false" selection-start-line="542" selection-start-column="9" selection-end-line="542" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="108" column="48" lean-forward="false" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp/compiled/admin_shangjia/login.htm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_shangjia/includes/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="348" column="5" lean-forward="true" selection-start-line="348" selection-start-column="5" selection-end-line="348" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="178" column="40" lean-forward="true" selection-start-line="178" selection-start-column="40" selection-end-line="178" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/lib_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6966">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/cls_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="290" column="20" lean-forward="true" selection-start-line="290" selection-start-column="20" selection-end-line="290" selection-end-column="20" />
+          <folding>
+            <marker date="1509778965760" expanded="true" signature="38582:38588" ph=" " />
+            <marker date="1509778965760" expanded="true" signature="38983:38989" ph=" " />
+            <marker date="1509778965760" expanded="true" signature="39653:39659" ph=" " />
+            <marker date="1509778965760" expanded="true" signature="39665:39671" ph=" " />
+            <marker date="1509778965760" expanded="true" signature="39744:39750" ph=" " />
+            <marker date="1509778965760" expanded="true" signature="39756:39762" ph=" " />
+            <marker date="1509778965760" expanded="true" signature="40580:40586" ph=" " />
+            <marker date="1509778965760" expanded="true" signature="41008:41014" ph=" " />
+            <marker date="1509778965760" expanded="true" signature="41397:41403" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_shangjia/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../zhiyouguoji_2.73/includes/lib_base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="2562" column="1" lean-forward="true" selection-start-line="2562" selection-start-column="1" selection-end-line="2562" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/cls_iconv.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="538" column="52" lean-forward="false" selection-start-line="538" selection-start-column="52" selection-end-line="538" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/safety.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_9.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="671" column="9" lean-forward="false" selection-start-line="671" selection-start-column="9" selection-end-line="671" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="671" column="9" lean-forward="false" selection-start-line="671" selection-start-column="9" selection-end-line="671" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/fckeditor/editor/filemanager/connectors/php/phpcompat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18144">
+          <caret line="683" column="60" lean-forward="false" selection-start-line="683" selection-start-column="45" selection-end-line="683" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/cls_error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1107">
+          <caret line="81" column="28" lean-forward="true" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="927">
+          <caret line="303" column="15" lean-forward="true" selection-start-line="303" selection-start-column="15" selection-end-line="303" selection-end-column="15" />
+          <folding>
+            <marker date="1496816586000" expanded="true" signature="3283:3333" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

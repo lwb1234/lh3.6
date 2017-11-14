@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css" />
+<link href="themes/meilele/css/category_wide.min.css?1128" rel="stylesheet" type="text/css"/>
+<script src="themes/meilele/js/jq.js?1119"></script>
+<script src="themes/meilele/js/jquery.json.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">(function(){var screenWidth=window.screen.width;if(screenWidth>=1280){document.body.className='root_body';window.isWideScreen = true;window.LOAD = true;}else{window.LOAD = false;}})()</script>
+
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem --> 
+
+<div class="w clearfix mt10">
+  <div class="cat_r">
+    <div class="position">
+      <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --> </div>
+
+	
+    
+    <a name="goods_list"></a> 
+<div class="sort clearfix" style="margin-bottom: 0;z-index:5;">
+      <div class="Left"> <span class="box">{$lang.goods_list}</span>
+	  
+	  </div>
+      
+      <div class="Right page_box">
+	  <form method="GET" name="listform">
+
+        <select name="sort" style="border:1px solid #ccc;">
+        {html_options options=$lang.exchange_sort selected=$pager.sort}
+        </select>
+        <select name="order" style="border:1px solid #ccc;">
+        {html_options options=$lang.order selected=$pager.order}
+        </select>
+        <input type="submit" value="提交" style="height:22px" />
+        <input type="hidden" name="category" value="{$category}" />
+        <input type="hidden" name="display" value="{$pager.display}" id="display" />
+        <input type="hidden" name="integral_min" value="{$integral_min}" />
+        <input type="hidden" name="integral_max" value="{$integral_max}" />
+        <input type="hidden" name="page" value="{$pager.page}" />
+      </form>
+	  
+	  </div>
+    </div>
+ <!-- {if !$goods_list} -->
+<div class="analysis_info" style="margin-top:5px">
+  <div class="analysis_text">
+    <table>
+      <tbody>
+        <tr>
+          <td><i></i></td>
+          <td>抱歉，没有找到与相关的商品。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+ <!--{/if}-->
+<div id="JS_goods_list" class="goods clearfix">
+<!--{foreach from=$goods_list item=goods name=goods_list}-->
+    <!-- {if $goods.goods_id} -->
+     <a name="g{$goods.goods_id}"></a>
+      <div class="list {if $smarty.foreach.goods_list.iteration % 3 eq 1}first{/if}">
+        {foreach from=get_goods_ex($GLOBALS['smarty']->_var['goods']['goods_id']) item=goods_data name=get_goods_ex}{if $smarty.foreach.get_goods_ex.iteration eq 1}{if $goods_data.goods_flag neq ''}<div class="float_bg"><span class="text3">{if $goods_data.goods_flag eq 'promote'}抢购{/if}{if $goods_data.goods_flag eq 'new'}新品{/if}{if $goods_data.goods_flag eq 'best'}特价{/if}{if $goods_data.goods_flag eq 'hot'}热销{/if}</span></div>{/if}{/if}{/foreach}
+        <div class="img"><a href="{$goods.url}" target="_blank" title="{$goods.goods_name}"><img src="images/blank.gif" data-src="{$goods.goods_thumb}" data-wide-src="{$goods.goods_thumb}" alt="{$goods.goods_name}" title="{$goods.goods_name}" width="235" height="156"/></a></div>
+        <div class="info">
+          <p class="goods_name f14"> <a class="name f14" href="{$goods.url}" target="_blank" title="{$goods.goods_name}">{$goods.goods_name}</a></p>
+          <p>{$lang.exchange_integral}<span class="red bold yen f16"><span class="JS_show_price_ajax" data-goods_id="">{$goods.exchange_integral}</span></span>&nbsp;<span class="yen gray">&nbsp;|&nbsp;</span><span class="price red">销量：<span class="JS_sale_num_ajax"><!--{foreach from=get_goods_ex($GLOBALS['smarty']->_var['goods']['goods_id']) item=goods_data name=get_goods_ex}--><!-- {if $smarty.foreach.get_goods_ex.iteration eq 1}-->{$goods_data.total_sells}<!-- {/if} --><!--{/foreach}--></span></span></p>
+        </div>
+        <div class="goods_button">
+          <!--{foreach from=get_goods_ex($GLOBALS['smarty']->_var['goods']['goods_id']) item=goods_data name=get_goods_ex}--><!-- {if $smarty.foreach.get_goods_ex.iteration eq 1}--><p class="com gray l">评价：<a target="_blank" class="orange">{$goods_data.total_comments}</a>&emsp;人气：{$goods_data.click_count}</p><!-- {/if} --><!--{/foreach}-->
+          <div class="buttons"> <a href="{$goods.url}" class="icon shoping_cat">查看商品</a> <a href="javascript:;" onclick="javascript:collect({$goods.goods_id});" class="icon collect">收藏</a> </div>
+        </div>
+      </div>
+    <!--{/if}-->
+    <!--{/foreach}-->  
+	  
+      
+    </div>
+<script src="themes/meilele/js/jquery.json.min.js"></script>	
+<script src="themes/meilele/js/common.js"></script>
+	<script type="Text/Javascript" language="JavaScript">
+<!--
+{literal}
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+{/literal}
+//-->
+</script>
+<script type="text/javascript">
+
+window.onload = function()
+{
+  
+}
+{foreach from=$lang.compare_js item=item key=key}
+{if $key neq 'button_compare'}
+var {$key} = "{$item}";
+{else}
+var button_compare = '';
+{/if}
+{/foreach}
+var compare_no_goods = "{$lang.compare_no_goods}";
+var btn_buy = "{$lang.btn_buy}";
+var is_cancel = "{$lang.is_cancel}";
+var select_spe = "{$lang.select_spe}";
+</script>
+    <!-- #BeginLibraryItem "/library/pages2.lbi" --><!-- #EndLibraryItem -->
+  </div>
+  <div class="cat_l">
+    
+    <!-- #BeginLibraryItem "/library/category_tree.lbi" --><!-- #EndLibraryItem -->
+    
+    
+	<div class="ranking mt10">
+  <div class="title_1"><span class="icon"></span><span class="zh">本月热卖排行榜</span></div>
+  <div class="rankbody">
+  <!--{foreach from=get_cat_hot_goods_5(0) item=goods_item name=best_goods}-->
+    <div id="JS_left_rank_{$smarty.foreach.best_goods.index}" class="list {if $smarty.foreach.best_goods.iteration eq 1}first{/if} {if $smarty.foreach.best_goods.last}current{/if}" onmouseover="setRankCurrent({$smarty.foreach.best_goods.index});">
+      <div class="titles"><span class="icon icon1">{$smarty.foreach.best_goods.iteration}</span><span style="width: auto;" class="name"><a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank">{$goods_item.short_name|truncate:8:"...":true}</a></span><span class="price yen red"><!-- {if $goods_item.promote_price neq ""} -->{$goods_item.promote_price}<!-- {else}-->{$goods_item.shop_price}<!--{/if}--></span></div>
+      <div class="extra">
+        <div class="img c"><a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank"><img data-src="{$goods_item.thumb}" src="{$goods_item.thumb}" alt="{$goods_item.name|escape:html}" height="106" width="160"></a></div>
+        <div class="info c"> 本站价：<span class="red yen"><!-- {if $goods_item.promote_price neq ""} -->{$goods_item.promote_price}<!-- {else}-->{$goods_item.shop_price}<!--{/if}--></span> <span class="gray">销量：</span><span class="orange"><!--{foreach from=get_goods_ex($GLOBALS['smarty']->_var['goods_item']['id']) item=goods_data name=get_goods_ex}--><!-- {if $smarty.foreach.get_goods_ex.iteration eq 1}-->{$goods_data.total_sells}<!-- {/if} --><!--{/foreach}--></span> </div>
+      </div>
+    </div>
+	<!--{/foreach}--> 
+    
+  </div>
+</div>
+<script>
+var _currentRankId = 0;
+function setRankCurrent(j) {
+	if (!j) {
+		j = 0;
+	}
+	if (j == _currentRankId) {
+		return;
+	}
+	var h = $("#JS_left_rank_" + j);
+	var i = $("#JS_left_rank_" + _currentRankId);
+	if (h && i) {
+		var c = h.find("span").eq(1);
+		var g = i.find("span").eq(1);
+		if (c && g) {
+			var b = c.find("a").eq(0);
+			var e = g.find("a").eq(0);
+			if (b && e) {
+				
+			}
+		}
+		h.addClass("current");
+		i.removeClass("current");
+		_currentRankId = j;
+	}
+}
+</script>
+
+	
+    <div class="comment mt10">
+      <div class="title_1"><span class="icon"></span><span class="zh">本月新品</span></div>
+      <!--{foreach from=get_cat_new_goods_10(0) item=goods_item name=best_goods}-->
+      <div class="list clearfix {if $smarty.foreach.best_goods.iteration eq 1}first{/if}{if $smarty.foreach.best_goods.last}last{/if}">
+        <div class="Left"><a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank"><img width="96" height="64" src="{$goods_item.thumb}"  alt="{$goods_item.name|escape:html}" /></a></div>
+        <div class="Right"> <a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank">{$goods_item.short_name|escape:html}</a>
+          <p class="gray">本站价：<span class="red yen"></span><span class="red JS_show_price_ajax" data-goods_id=""><!-- {if $goods_item.promote_price neq ""} -->{$goods_item.promote_price}<!-- {else}-->{$goods_item.shop_price}<!--{/if}--></span></p>
+        </div>
+      </div>
+     <!--{/foreach}--> 
+    </div>
+    <div class="mt10" id="JS_adimg_rand"></div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var _fixture_url = [];
+
+var _fixture_bbs=[];
+</script>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+
+
+
+<script src="themes/meilele/js/back_to_top.min.js?1127"></script>
+<script src="themes/meilele/js/category_wide_b.min.js?1127"></script>
+<script type="text/javascript">
+
+var CG = CG || {};
+	CG.priceUrl = '';
+	var _basic_url = '';
+
+	CG.cat_id = 268;
+	new TabMouseover('JS_fixture_tag','fixture_show',0);
+
+</script>
+<script type="text/javascript">
+(function(){
+	$('#JS_more_link_g_new').click(function(){
+		var item =$(this),span=$('#JS_more'),arrow=$('#JS_more_arrow'),show_div=$('#JS_show_more');
+		if( item.data('link') == 'more'){
+			item.data('link','reduce');
+			span.html('收起');
+			arrow[0].className="arrow_up";
+			show_div.show();
+		}else{
+			item.data('link','more');
+			span.html('更多');
+			arrow[0].className="arrow_down";
+			show_div.hide();
+		}
+	});
+
+var select_div=$('#JS_new_pro_select');
+	$('#JS_new_select').mouseenter(function(){
+		select_div.show();
+	}).mouseleave(function(){
+		select_div.hide();
+	});
+})();
+
+</script>
+<script type="text/javascript" src="themes/meilele/js/viewHistory.min.js?0917"></script>
+
+
+
+</body>
+</html>

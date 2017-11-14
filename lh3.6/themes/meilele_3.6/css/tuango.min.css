@@ -1,0 +1,41 @@
+body{background:none repeat scroll 0 0 #f7eeef;height:100%}.tg_pos{padding:4px 0 12px 3px}.tg_pos .pos_icon{background:url(../images/tuango/tuangou_list_bg2.gif) no-repeat scroll 0 0 rgba(0,0,0,0);display:inline-block;height:15px;vertical-align:top;width:15px}
+.tg_pos .pos_in{display:inline-block}.tuan_ad{width:980px;margin-bottom:14px}.tuan_ad img{width:980px}.root_body .tuan_ad{width:1190px}.root_body .tuan_ad img{width:1190px}
+.tuan_serch{background:none repeat scroll 0 0 #fff;border-color:#c10000 #d4d4d4 #c6c6c6;box-shadow:0 1px 3px #c7c7c7;border-style:solid;border-width:2px 1px 1px;margin-bottom:14px}
+.tuan_serch .tuan_serch_t{height:35px;border-bottom:solid 1px #e8e8e8;line-height:35px}.tuan_serch .tuan_serch_t h3{font-weight:bold;text-indent:16px;font-size:15px;color:#c10000}
+.tuan_serch .tuan_serch_t a{height:20px;border:solid 1px #d2d2d2;line-height:20px;padding:0 10px;color:#f60;margin-top:6px;margin-right:16px;border-radius:2px}
+.tuan_serch_item{margin:0 16px;padding:10px 0 5px;position:relative;overflow:hidden;border-bottom:dotted 1px #e8e8e8}.tuan_serch_item dt{font-weight:bold;position:absolute;left:0;top:10px;width:160px;text-align:right;font-weight:normal}
+.tuan_serch_item dt b{width:60px;float:left;font-weight:bold}.tuan_serch_item dd{padding-left:160px;overflow:hidden}.tuan_serch_item a{display:inline-block;margin:0 0 5px 10px;line-height:16px;height:16px;padding:0 3px}
+.tuan_serch_item a span{color:#989898}.tuan_serch_item a:hover span{color:#f60}.tuan_serch_item a.active{background:#f60;color:#fff}.tuan_serch_item a.active span{color:#fff}
+.tuan_serch_item a.active:hover{color:#fff!important}.tuan_menu{height:38px;border-color:#eaeaea #fff #fff;border-style:solid;border-width:1px;line-height:38px;background:url(../images/tuango/tuan_menu.jpg) repeat-x center top}
+.tuan_menu dl{float:left}.tuan_menu dl dt{width:94px;float:left;text-indent:38px;border-right:solid 1px #e5e5e5}.tuan_menu dl dd{float:left}.tuan_menu dl dd a{background:url(../images/tuango/tuangou_list_bg2.gif) no-repeat scroll 0 0;border-left:1px solid #fff;border-right:1px solid #e5e5e5;display:inline-block;height:38px;padding:0 28px 0 20px}
+.tuan_menu dl dd a.mrasc{background-position:-95px -65px}.tuan_menu dl dd a.mrdesc{background-position:-95px -90px}.tuan_menu dl dd a.ondesc{background-position:-95px -120px;color:#c10000}
+.tuan_menu dl dd a.onasc{background-position:-95px -151px;color:#c10000}.tuan_menu .inputbox{padding-left:60px}.tuan_menu .inputbox label{display:block;float:left;_margin-top:10px}
+.tuan_menu .inputbox label input{vertical-align:middle}.tuan_menu .totalbox{margin-right:14px}.tuan_menu .totalbox .total{display:inline-block;vertical-align:top;font-weight:bold}
+.tuan_menu .totalbox .total b{color:#c00}.tuan_menu .totalbox .page{display:inline-block;margin-left:12px}.tuan_menu .totalbox .page a{margin-top:8px}
+.tuan_menu .totalbox .page .prev{background:url(../images/tuango/tuangou_list_bg2.gif) no-repeat scroll -136px -187px #fff;border:1px solid #d2d2d2;display:inline-block;height:20px;width:20px}
+.tuan_menu .totalbox .page .pg{display:inline-block;vertical-align:top}.tuan_menu .totalbox .page .pg i{color:#c00;font-style:normal}.tuan_menu .totalbox .page .next{background:url(../images/tuango/tuangou_list_bg2.gif) no-repeat scroll -98px -215px #fff;border:1px solid #d2d2d2;display:inline-block;height:20px;line-height:20px;padding-left:5px;vertical-align:top;width:51px}
+.tuan_list_container{width:998px}.root_body .tuan_list_container{width:1210px}
+.root_body .tuan_list_container .tg_list{margin:0 14px 15px 0}
+.tuan_list_container .tg_list{float:left;margin:0 18px 15px 0;position:relative}
+.tuan_list_container .tg_list div.tg_goods{background:none repeat scroll 0 0 #fff;border:1px solid #d6d6d6;height:303px;padding:0 23px;text-align:center;width:266px;box-shadow:0 1px 3px #c7c7c7}
+.root_body .tuan_list_container .tg_list div.tg_goods{padding:0 9px}.tuan_list_container .tg_list div.active{border:solid 1px #c10000}.tuan_list_container .tg_list div.tg_goods_on{border:1px solid #c10000}
+.tuan_list_container .tg_list div.tg_goods p.name{padding:15px 0;height:18px;line-height:18px}.tuan_list_container .tg_list div.tg_goods p.name a{font-family:"微软雅黑";font-size:14px;font-weight:bolder}
+.tuan_list_container .tg_list div.tg_goods p.name a:hover{text-decoration:none}.tuan_list_container .tg_list div.tg_goods p.tg_pic{position:relative;width:266px;height:176px;overflow:hidden}
+.tuan_list_container .tg_list div.tg_goods p.tg_pic span.tg_info{position:absolute;height:22px;background:#333;filter:alpha(opacity=50);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha( opacity=50 )";opacity:.5;bottom:0;left:0;display:block;width:100%;line-height:22px;color:#fff}
+.tuan_list_container .tg_list div.tg_goods p.tg_pic span.tg_info span{padding:0 5px}.tuan_list_container .tg_list div.tg_goods p.tg_pic span.tg_info span b{color:#f60}
+.tuan_list_container .tg_list div.tg_goods a.gogo{background:url(../images/tuango/tuangou_list_bg2.gif) no-repeat scroll 0 -255px;color:#fff;display:inline-block;height:46px;line-height:46px;margin-top:14px;padding-left:10px;text-align:left;width:256px}
+.tuan_list_container .tg_list div.tg_goods a.gogo .yen{font-size:28px;float:left;cursor:pointer}.tuan_list_container .tg_list div.tg_goods a.nostart{background-position:0 -301px}
+.tuan_list_container .tg_list div.tg_goods a.over{background-position:0 -406px}.tuan_list_container .tg_list div.tg_goods a.soldout{background-position:0 -347px}
+.tuan_list_container .tg_list div.tg_goods a.delstl:hover{color:#fff!important;text-decoration:none}.tuan_list_container .tg_list div.tg_goods a.gogo span{float:left;padding:8px;height:30px;line-height:15px;cursor:pointer}
+.tuan_list_container .tg_list div.tg_goods a.gogo span i{font-style:normal;text-decoration:line-through}.tuan_list_container .tg_list div.tg_goods a.gogo span b{color:#ffd946}
+.tuan_list_container .tg_list div.tg_goods a.gogo .yen small{font-size:20px;font-weight:normal}.tuan_list_container .tg_list div.tg_goods a.delstl:hover{color:#fff!important;text-decoration:none}
+.tuan_list_container .tg_list p.icon{height:58px;position:absolute;right:0;top:0;width:53px}.tuan_list_container .tg_list p.bwl{background:url(../images/club/files/attached/201310/68601382945539.png) no-repeat scroll right top;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/themes/meilele/images/68601382945539.png")}
+.tuan_list_container .tg_list p.bkd{background:url(../images/club/files/attached/201310/46091382945535.png) no-repeat scroll right top;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/themes/meilele/images/46091382945535.png")}
+.tuan_list_container .tg_list p.foot{background:url(../images/tuango/tuangou_list_bg2.gif) no-repeat scroll 0 -393px;height:5px;margin-left:4px;width:282px}
+.cPager{color:#444;margin:5px 0 24px;width:950px}.cPager a,.cPager strong,.cPager .to_page,.cPager em{background:none repeat scroll 0 0 #fff;border:1px solid #999;color:#444;display:inline-block;font-style:normal;line-height:14px;padding:6px 9px;vertical-align:middle}
+.pcPagerage em{border:0 none}.cPager strong,.cPager a:hover,.cPager .current{background:none repeat scroll 0 0 #b20000;border:1px solid #b20000;color:#fff!important;text-decoration:none}
+.cPager a:hover .arrow span{color:#fff!important}.cPager .arrow{display:inline-block;margin:0 3px;overflow:hidden;vertical-align:top;width:6px}.cPager .arrow span{color:#444}
+.cPager .arrow .aright{margin-left:-5px;text-align:right}.cPager .to_page{margin:0;padding:5px 8px;text-align:center;width:2em}.tuan_activity{border:solid 1px #eee;width:978px;margin:0 auto;overflow:hidden;background:#fff;padding-bottom:10px}
+.tuan_activity h3{font-family:"微软雅黑";height:36px;line-height:36px;text-indent:1em;width:960px;margin:0 auto;color:#525453}
+.tuan_activity ul{width:960px;margin:0 auto}.tuan_activity ul li{float:left;width:456px;height:206px;overflow:hidden;padding:5px;border:solid 1px #d5d5d5;margin:6px;display:inline}
+/*GERMANY:2013-10-30 18:12:05*/

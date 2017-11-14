@@ -1,0 +1,308 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+{insert_scripts files='common.js,user.js,utils.js'}
+<script>
+//初始空函数，防止页面报错，勿删，函数真身在页脚。
+function _show_() {};
+function _hide_() {};
+var City = {
+	init: function() {}
+}
+window.$ = window.$ || {};
+window.M = window.M || {};
+$.__IMG = M.__IMG = '' || '';
+var M = M || {};
+M.getCookie = function(a) {
+	var e;
+	if (document.cookie && document.cookie !== "") {
+		var d = document.cookie.split(";");
+		var f = d.length;
+		for (var c = 0; c < f; c++) {
+			var b = d[c].replace(/(^\s*)|(\s*$)/g, "");
+			if (b.substring(0, a.length + 1) == (a + "=")) {
+				e = decodeURIComponent(b.substring(a.length + 1));
+				break;
+			}
+		}
+	}
+	return e;
+};</script>
+<div id="JS_n_header_top_banner" class="pageAD">
+  <div class="closeX" onClick="$('#JS_n_header_top_banner').slideUp();">&times;</div>
+  <div style="background:url(images/topbg.jpg) 0 0 repeat-x">
+    <div class="w" style="text-align:center;"> {foreach from=get_advlist_by_id(1) item=ad name=index_image} <a href="{$ad.url}" target="_blank" title="{$ad.name}"><img src="/{$ad.image}" alt="{$ad.name}" width="980" height="50" /></a> {/foreach} </div>
+  </div>
+</div>
+<div class="page-header" style="padding-bottom:5px">
+  <div class="w clearfix">
+     <!-- logo -->
+     <div class="logo Left"><a id="JS_Header_Logo_link_home" href="/" title=""><img src="images/blank.gif" width="150" height="48"  alt="" /></a></div>
+     <div class="city Left">
+       <img class="en_name" src="images/blank.gif" width="172" height="35" />
+     </div>
+      <!-- logo右侧广告 -->
+	  <div class="topAd Left">
+	  {foreach from=get_advlist_by_id(14) item=ad name=index_image}
+	    <table>
+	      <tr>
+		<td><a href="{$ad.url}" target="_blank" title=""><img src="{$ad.image}" alt="" width="145" height="90" /></a></td>
+	      </tr>
+	    </table>
+	  {/foreach}
+	  </div>
+  <div class="topArea Right">
+    <table class="topMenu">
+      <tr>
+        <td id="JS_head_login" class="login" align="right">{insert name='member_info'}</td>
+	<!-- 注释了订单和手机 -->
+        <!-- <td><em class="line"></em></td> -->
+        <!-- <td><a href="user.php?act=order_list" target="_blank" title="我的订单">我的订单</a></td> -->
+        <!-- <td><em class="line"></em></td> -->
+        <!-- <td><a href="mobile/index.php" target="_blank" title="手机版">手机版</a></td> -->
+        <td><em class="line"></em></td>
+        <td><div class="help" id="JS_common_head_help"> <a href="javascript:void(0);" class="link">帮助中心</a>
+            <div class="hideMenu">
+              <ul>
+                <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+                <li><a href="{$nav.url}"  
+                  <!-- {if $nav.opennew eq 1} -->
+                  target="_blank"
+                  <!-- {/if} -->
+                  >{$nav.name}</a></li>
+                <!-- {/foreach} -->
+              </ul>
+            </div>
+          </div></td>
+        <td><em class="line"></em></td>
+        <td><a href="javascript:;" onClick="shoucang();">收藏本站</a></td>
+      </tr>
+    </table>
+	<script type="text/javascript">
+    {literal}
+    <!--
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+            $.alert("{$lang.no_keywords}");
+            return false;
+        }
+    }
+    -->
+    {/literal}
+    </script>
+	
+    <div class="btMap" >
+      <div class="Left search_box">
+        <div class="search">
+          <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+            <div class="sideShadow"></div>
+            <input id="keyword" type="text" name="keywords" class="keyWord" value="" autocomplete="off" />
+            <input type="submit" class="submit" value="搜 索" />
+            <input type="hidden" name="fl" value="q"/>
+          </form>
+          <div style="display: none;" id="JS_search_suggest" class="suggest"> </div>
+        </div>
+        <div style="margin-top:5px;color:#999;width:416px;height:14px;overflow:hidden;"> 热门搜索： 
+          {foreach from=$searchkeywords item=val} <a href="search.php?keywords={$val|escape:url}" style="color:#999;">{$val}</a>&ensp; 
+          {/foreach} </div>
+      </div>
+      <div id="JS_header_cart_handler" class="cart Right"> <a href="store_list.php" class="cartLink"><span class="">店铺展示浏览</span></a>
+
+      </div>
+      <div class="cart Right mymll"> <a href="user.php" class="cartLink"><span class="">我的中心</span></a> </div>
+    </div>
+	
+	
+  </div>
+</div>
+<script language="javascript">
+function drop_cart_goods(id)
+{
+	$.ajax({
+					type:"POST",
+					url:"flow.php?step=drop_cart_goods&id=" + id,
+					cache:false,
+					dataType:'json',     //接受数据格式
+					data:'',
+					success:function(result){
+						$('#JS_header_cart_list').html(result.message);
+						$('#cartInfo_number').html(result.goods_num);
+					}
+				});
+}
+
+</script>
+
+<div class="w globa-nav">
+ <!-- <div class="shadow" style="display:none"></div> -->
+  <div class="w">
+    <div class="allGoodsCat Left" id="JS_common_head_menu_812" class="hover"> <a href="javascript:;" class="menuEvent"><strong class="catName">全部商品分类</strong><span class="arrow"></span></a>
+      <div class="expandMenu" id="JS_head_expand_menu_target"></div>
+    </div>
+    <div class="allMenu Left"> <a id="JS_Header_Home_Link" href="/" title="首页" class="index {if $navigator_list.config.index eq 1}current{/if}">首页</a><!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} --><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="current"{/if} style="position:relative;">{$nav.name}</a><!-- {/foreach} --> </div>
+    <!-- <div class="sideMenu2 Right"><a class="menu" href="xspace.html" title="">秀家</a><a class="menu" href="/bbs" target="_blank" title="">装修吧</a></div> -->
+ </div>
+</div>
+
+<div class="globa-submenu"  id="globa_submenu" >
+  <div class="w clearfix">
+    <div class="frameLeft"></div>
+    <div class="menuBox">
+      <div class="Left"> &ensp;
+      <a href="search_list_hot.html" class="red" target="_blank" title="热销">热销</a>&ensp;|&ensp; 
+      <a href="search_list_best.html" class="red" target="_blank" title="推荐">推荐</a>&ensp;|&ensp; 
+      <!-- <a  href="group_buy.html" target="_blank" title="团购">团购</a>&ensp;|&ensp; -->
+      <!-- <a href="search_list_promotion.html" target="_blank" title="特价">特价</a>&ensp;|&ensp; -->
+      <!-- <a href="activity.html" target="_blank" title="套装">套装</a>&ensp;|&ensp; -->
+      <a href="search_list_new.html" target="_blank" title="新品">新品</a>&ensp;|&ensp; 
+       </div>
+      <div id="JS_temai_n_menu" class="Left none"></div>
+    </div>
+    <div class="frameRight"></div>
+  </div>
+</div>
+<textarea id="JS_all_head_category_menu"  style="display:none">
+	<div class="all_cat">
+	<!--{foreach from=get_categories_tree() item=cat name=get_categories_tree}-->
+    {if $smarty.foreach.get_categories_tree.iteration < 4}
+			<div class="list JS_catItem">
+				<dl class="cat">
+					<dt class="catName"><strong class="cat1 Left"><a href="{$cat.url}" target="_blank" title="">{$cat.name|escape:html}</a></strong><span class="Right">&gt;</span></dt>
+					<dd class="catList"><!--{foreach from=$cat.cat_id item=child}--><a href="{$child.url}" target="_blank" title="{$child.name|escape:html}">{$child.name|escape:html}</a>&emsp;
+					<!--{/foreach}--></dd>
+				</dl>
+				<div id="JS_globa_goods_cat_target_1" class="hideMap">
+						<div class="topMap clearfix">
+							<div class="subCat clearfix">
+								<div class="col">
+									<!--{foreach from=$cat.cat_id item=child name=cat_cat_id}-->	
+									<dl class="item {if $smarty.foreach.cat_cat_id.iteration eq 1}no_border{/if}">
+										<dt class="dt"><a href="{$child.url}" class="red">{$child.name|escape:html}</a></dt>
+										<dd class="dd">
+										<!--{foreach from=$child.cat_id item=childer}-->
+											<span>|&ensp;<a href="{$childer.url}">{$childer.name|escape:html}</a>&ensp;</span>
+										<!--{/foreach}-->							
+										</dd>
+									</dl>
+									<!--{/foreach}-->
+								</div>
+							</div>
+							<div class="bottomMap">
+								<h1 class="f14 red">推荐品牌</h1>
+									<ul class="brand clearfix">
+									{foreach from=get_nav_brand_by_cat_id($this->_var['cat']['id']) item=ad name=index_image}
+									{if $smarty.foreach.index_image.iteration < 5}
+									<li class="li {if $smarty.foreach.index_image.iteration < 3}addTopBorder{/if}"><a href="{$ad.url}" target="_blank" title="{$ad.name}" class="img"><img src="{$ad.image}" width="85" heiht="50" alt="{$brandCat.name}" /></a><a class="name">{$ad.title}</a></li>
+									{/if}
+									{/foreach}
+									
+									</ul>
+									<h1 class="f14 red mt20">促销活动</h1>
+									<ul class="activity">
+									{foreach from=get_navad_by_cat_id($this->_var['cat']['id']) item=ad name=index_image}
+									<li><a href="{$ad.url}" target="_blank" title="{$ad.ad_code}">&bull;&ensp;&ensp;{$ad.ad_code}</a></li>
+									{/foreach}
+									
+									</ul>
+								</div>
+						</div>
+				</div>
+		    </div>
+		{/if}
+<!--{/foreach}-->		
+		<div class="hotMenu">
+		  <table>
+			<tr>
+			  <td><strong>热荐</strong> </td>
+			  <td> {foreach from=get_cat_rec_1() item=rec_data name=cat_rec} <a href="category.php?id={$rec_data.cat_id}" title="{$rec_data.cat_name}" target="_blank">{$rec_data.cat_name}</a> {/foreach} </td>
+			</tr>
+		  </table>
+		</div>
+		<div class="otherMenu">
+		  <dl class="specal_zone">
+			<dd> 
+			<a href="search_list_hot.html" target="_blank" title="热销" class="light">热销</a> 
+			<a href="search_list_best.html" target="_blank" title="推荐" class="light">推荐</a> 
+			<!-- <a href="group_buy.html" target="_blank" title="团购" class="light">团购</a> -->
+			<!-- <a href="search_list_promotion.html" target="_blank" title="特价">特价</a> -->
+			<!-- <a href="activity.html" target="_blank" title="套装" class="light">套装</a> -->
+			<a href="search_list_new.html" target="_blank" title="新品">新品<i class="specal_new"></i></a> 
+			<!-- <a href="expr.html" target="_blank" title="体验馆">体验馆</a> -->
+			</dd>
+		  </dl>
+		</div>
+	</div>
+	<div class="cat_shadow"></div>
+</textarea>
+<script>
+window._onReadyList = window._onReadyList || [];
+_onReadyList.push( function(){
+	$('#JS_hide_city_menu_11').hover(
+		function(){
+			_show_(this,{source:'JS_choose_city_source',target:'JS_header_city_bar_box',data:'JS_city_data',templateFunction:function(dom,json){
+					dom = dom.jquery ? dom : $(dom);
+					if(json){
+						var out = '';
+						var hot = '<a href="china.html" class="site_all Left" onclick="$.goExpr(\'china.html\',\'\',\'\',\'全国\');return !1;"><strong>全国</strong></a>&nbsp;';
+						var inner = '';
+						var charList = '';
+						
+						$.each(json.city_list, function(key,item){
+							charList += '<a href="javascript:;">'+key+'</a>';
+							out += '<tr><th><div>'+key+'</div></th><td>';
+							$.each(item,function(index,shi){
+								out += '<a href="'+shi.pinyin+'.html" data-region_id="'+shi.region_id+'" data-pinyin="'+shi.pinyin+'" onclick="$.goExpr(\''+shi.pinyin+'\',\''+shi.region_id+'\',\'\',\''+shi.region_name+'\');return !1;">'+shi.region_name+'</a>';
+							});
+							out += '</td></tr>';
+						});
+
+						$.each(json.host_city_list,function(index,shi){
+							hot += '<a href="'+shi.pinyin+'.html" data-region_id="'+shi.region_id+'" data-pinyin="'+shi.pinyin+'" onclick="$.goExpr(\''+shi.pinyin+'\',\''+shi.region_id+'\',\'\',\''+shi.region_name+'\');return !1;">'+shi.region_name+'</a>';
+						});
+
+						dom.find('#JS_header_city_hot').html( hot );
+						dom.find('#JS_header_city_char').html( charList );
+						dom.find('#JS_header_city_list').html( out );
+						
+						return dom;
+					}
+				}});
+			City.init();
+		},
+		function(){
+			_hide_(this);
+		}
+	);
+	$('#JS_common_head_help').hover(
+		function(){_show_(this);},function(){_hide_(this);}
+	);
+		$('#JS_common_head_menu_812').hover(
+		function(){
+			_show_(this,{source:'JS_all_head_category_menu',target:'JS_head_expand_menu_target'});
+		},
+		function(){
+			_hide_(this);
+		}
+	);
+	$('#JS_head_expand_menu_target').on('mouseenter','div.JS_catItem',function(){
+		_show_(this);
+	});
+	$('#JS_head_expand_menu_target').on('mouseleave','div.JS_catItem',function(){
+		_hide_(this);
+	});
+	
+	$('#JS_MLL_search_header_input').focus(function(){
+		$.searchKey( 'JS_MLL_search_header_input', 'JS_search_suggest' );
+		$('#JS_MLL_search_header_input').unbind('focus');
+	});
+} )
+</script>

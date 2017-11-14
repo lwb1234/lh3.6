@@ -1,0 +1,46 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div id="JS_viewHistory" class="mt10" style="display:none">
+<div class="cs_icon" style=""></div>
+  <div class="title"><span class="f14">根据您的浏览记录 我们为您推荐</span></div>
+  <div class="clearfix body">
+    <div class="history">
+      <div class="text" title="您最近的浏览记录"></div>
+      <div id="JS_history" class="clearfix">
+	  <!--{foreach from=get_history() item=item name=historys}-->
+	  {if $smarty.foreach.historys.iteration < 4}
+        <div class="list clearfix">
+          <div class="Left"><a href="{$item.url}" target="_blank"><img src="{$item.goods_thumb}" data-src-vh="{$item.goods_thumb}" data="images/blank.gif" alt="{$item.short_name}" height="57" width="91"></a></div>
+          <div class="Right"><a href="{$item.url}" title="{$item.short_name}" target="_blank">{$item.short_name|truncate:16:"...":true}</a><br>
+           <!-- <span class="red bold yen">{$item.shop_price}</span> -->
+	   </div>
+        </div>
+		{/if}
+       <!--{/foreach}-->
+      </div>
+    </div>
+    <div class="scroll" id="JS_scroll">
+      <div class="text">为您推荐以下商品：</div>
+      <div style="height:206px;overflow:hidden;margin-bottom:20px;">
+        <div class="box" style="overflow-x:scroll;height:260px;" id="JS_scroll_box">
+          <table style="margin-left: 0px;" id="JS_scroll_table">
+            <tbody>
+              <tr>
+			  <!--{foreach from=get_cat_promote_goods_12($GLOBALS['smarty']->_var['top_id']) item=goods_item name=get_cat_best_goods_12}-->
+                <td><div><a target="_blank" href="{$goods_item.url}" title="{$goods_item.name|escape:html}"><img src="{$goods_item.thumb}" data-src-vh="{$goods_item.thumb}" alt="{$goods_item.name|escape:html}" height="106" width="160"></a></div>
+                  <div class="bd"><a target="_blank" href="{$goods_item.url}">{$goods_item.short_name|escape:html}</a><br>
+                    <span class="gray">本站价：</span><span class="red bold yen"><!-- {if $goods_item.promote_price neq ""} -->{$goods_item.promote_price}<!-- {else}-->{$goods_item.shop_price}<!--{/if}--></span></div></td>
+              <!--{/foreach}-->	  
+				
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <a class="btn enabled btn_left" id="JS_scroll_left"></a><a class="btn enabled btn_right" id="JS_scroll_right"></a>
+      <div class="bar">
+        <button id="JS_scroll_btn" style="margin-left: 0px; border: 0px none;"></button>
+      </div>
+    </div>
+  </div>
+</div>

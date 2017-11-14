@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css" />
+<link href="themes/meilele/css/category_wide.min.css?1128" rel="stylesheet" type="text/css"/>
+<script src="themes/meilele/js/jq.js"></script>
+<script src="themes/meilele/js/jquery.json.min.js"></script>
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script type="text/javascript">(function(){var screenWidth=window.screen.width;if(screenWidth>=1280){document.body.className='root_body';window.isWideScreen = true;window.LOAD = true;}else{window.LOAD = false;}})()</script>
+
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem --> 
+
+<div class="w clearfix mt10">
+  <div class="cat_r">
+  <!-- #BeginLibraryItem "/library/message_list.lbi" --><!-- #EndLibraryItem -->
+  <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+  <div class="blank5"></div>
+    <div class="box">
+     <div class="box_1">
+
+	  <h3 style="border:1px solid #e2e2e2; padding:9px 10px; margin-bottom:5px; background-color:RGB(248,248,248); font-size:14px; margin-top:5px"><span>{$lang.post_message}</span></h3>
+      <div class="boxCenterList">
+          <form action="message.php" method="post" name="formMsg" onSubmit="return submitMsgBoard(this)">
+            <table width="100%" border="0" cellpadding="3">
+              <tr>
+                <td align="right">{$lang.username}</td>
+                <td>
+                <!--{if $smarty.session.user_name}-->
+                <font class="f4_b">{$username}</font><label for="anonymous" style="margin-left:8px;"><input type="checkbox" name="anonymous" value="1" id="anonymous" />{$lang.message_anonymous}</label>
+                <!--{else}-->
+               {$lang.anonymous}
+                <!--{/if}-->
+                </td>
+              </tr>
+              <tr>
+                <td align="right">{$lang.email}</td>
+                <td><input name="user_email" type="text" class="inputBg" size="20" value="{$smarty.session.email|escape}" /></td>
+              </tr>
+              <tr>
+                <td align="right">{$lang.message_board_type}</td>
+                <td><input name="msg_type" type="radio" value="0" checked="checked" />
+                  {$lang.message_type[0]}
+                  <input type="radio" name="msg_type" value="1" />
+                  {$lang.message_type[1]}
+                  <input type="radio" name="msg_type" value="2" />
+                  {$lang.message_type[2]}
+                  <input type="radio" name="msg_type" value="3" />
+                  {$lang.message_type[3]}
+                  <input type="radio" name="msg_type" value="4" />
+                  {$lang.message_type[4]} </td>
+              </tr>
+              <tr>
+                <td align="right">{$lang.message_title}</td>
+                <td><input name="msg_title" type="text" class="inputBg" size="30" /></td>
+              </tr>
+            <!-- 判断是否启用验证码{if $enabled_mes_captcha} -->
+              <tr>
+                <td align="right">{$lang.comment_captcha}</td>
+                <td><input type="text" size="8" name="captcha"  class="inputBg" />
+                <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </td>
+              </tr>
+            <!--{/if}-->
+              <tr>
+                <td align="right" valign="top">{$lang.message_content}</td>
+                <td><textarea name="msg_content" cols="50" rows="4" wrap="virtual" style="border:1px solid #ccc;"></textarea></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><input type="hidden" name="act" value="act_add_message" />
+                  <input type="submit" value="{$lang.post_message}" class="bnt_blue_1" />
+                </td>
+              </tr>
+            </table>
+          </form>
+        <script type="text/javascript">
+        {foreach from=$lang.message_board_js item=item key=key}
+        var {$key} = "{$item}";
+        {/foreach}
+        {literal}
+        /**
+         * 提交留言信息
+        */
+        function submitMsgBoard(frm)
+        {
+            var msg = new Object;
+
+             msg.user_email  = frm.elements['user_email'].value;
+             msg.msg_title   = frm.elements['msg_title'].value;
+             msg.msg_content = frm.elements['msg_content'].value;
+             msg.captcha     = frm.elements['captcha'] ? frm.elements['captcha'].value : '';
+
+            var msg_err = '';
+
+            if (msg.user_email.length > 0)
+            {
+               if (!(Utils.isEmail(msg.user_email)))
+               {
+                  msg_err += msg_error_email + '\n';
+                }
+             }
+             else
+             {
+                  msg_err += msg_empty_email + '\n';
+             }
+            if (msg.msg_title.length == 0)
+            {
+                msg_err += msg_title_empty + '\n';
+            }
+            if (frm.elements['captcha'] && msg.captcha.length==0)
+            {
+                msg_err += msg_captcha_empty + '\n'
+            }
+            if (msg.msg_content.length == 0)
+            {
+                msg_err += msg_content_empty + '\n'
+            }
+            if (msg.msg_title.length > 200)
+            {
+                msg_err += msg_title_limit + '\n';
+            }
+
+            if (msg_err.length > 0)
+            {
+                alert(msg_err);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        {/literal}
+        </script>
+      </div>
+     </div>
+    </div>
+
+	
+	
+  </div>
+  <div class="cat_l">
+    
+    <!-- #BeginLibraryItem "/library/category_tree.lbi" --><!-- #EndLibraryItem -->
+    
+    
+	<div class="ranking mt10">
+  <div class="title_1"><span class="icon"></span><span class="zh">本月热卖排行榜</span></div>
+  <div class="rankbody">
+  <!--{foreach from=get_cat_hot_goods_5(0) item=goods_item name=best_goods}-->
+    <div id="JS_left_rank_{$smarty.foreach.best_goods.index}" class="list {if $smarty.foreach.best_goods.iteration eq 1}first{/if} {if $smarty.foreach.best_goods.last}current{/if}" onmouseover="setRankCurrent({$smarty.foreach.best_goods.index});">
+      <div class="titles"><span class="icon icon1">{$smarty.foreach.best_goods.iteration}</span><span style="width: auto;" class="name"><a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank">{$goods_item.short_name|truncate:8:"...":true}</a></span><span class="price yen red"><!-- {if $goods_item.promote_price neq ""} -->{$goods_item.promote_price}<!-- {else}-->{$goods_item.shop_price}<!--{/if}--></span></div>
+      <div class="extra">
+        <div class="img c"><a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank"><img data-src="{$goods_item.thumb}" src="{$goods_item.thumb}" alt="{$goods_item.name|escape:html}" height="106" width="160"></a></div>
+        <div class="info c"> 本站价：<span class="red yen"><!-- {if $goods_item.promote_price neq ""} -->{$goods_item.promote_price}<!-- {else}-->{$goods_item.shop_price}<!--{/if}--></span> <span class="gray">销量：</span><span class="orange"><!--{foreach from=get_goods_ex($GLOBALS['smarty']->_var['goods_item']['id']) item=goods_data name=get_goods_ex}--><!-- {if $smarty.foreach.get_goods_ex.iteration eq 1}-->{$goods_data.total_sells}<!-- {/if} --><!--{/foreach}--></span> </div>
+      </div>
+    </div>
+	<!--{/foreach}--> 
+    
+  </div>
+</div>
+<script>
+var _currentRankId = 0;
+function setRankCurrent(j) {
+	if (!j) {
+		j = 0;
+	}
+	if (j == _currentRankId) {
+		return;
+	}
+	var h = $("#JS_left_rank_" + j);
+	var i = $("#JS_left_rank_" + _currentRankId);
+	if (h && i) {
+		var c = h.find("span").eq(1);
+		var g = i.find("span").eq(1);
+		if (c && g) {
+			var b = c.find("a").eq(0);
+			var e = g.find("a").eq(0);
+			if (b && e) {
+				
+			}
+		}
+		h.addClass("current");
+		i.removeClass("current");
+		_currentRankId = j;
+	}
+}
+</script>
+
+	
+    <!-- #BeginLibraryItem "/library/goods_new.lbi" --><!-- #EndLibraryItem -->
+    <div class="mt10" id="JS_adimg_rand"></div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var _fixture_url = [];
+
+var _fixture_bbs=[];
+</script>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+
+
+
+<script src="themes/meilele/js/back_to_top.min.js?1127"></script>
+
+
+
+
+</body>
+</html>

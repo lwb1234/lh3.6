@@ -1,0 +1,68 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+			var _currentCat = '0';
+			function toggleCatgory1(c) {
+	var g = $("#JS_category_body_" + c);
+	var j = $("#JS_category_icon2_" + c);
+	var h = $("#JS_category_title_" + c);
+	var d = $("#JS_category_body_" + _currentCat);
+	var i = $("#JS_category_icon2_" + _currentCat);
+	var e = $("#JS_category_title_" + _currentCat);
+	if (g && j) {
+		if (_currentCat == c) {
+			i.html("+");
+			d.addClass("none");
+			_currentCat = -1;
+		} else {
+			var f = g.find("b");
+			var k = g.find("dd");
+			g.removeClass("none");
+			j.html("-");
+			if (_currentCat != "-1" && d && i) {
+				d.addClass("none");
+				i.html("+");
+			}
+			_currentCat = c;
+		}
+	}
+}
+function toggleCatgory2(e) {
+	e = $(e);
+	if (e.length) {
+		var a = e;
+		var c = e.parent().parent().find("dd").eq(0);
+		if (a.prop("nodeName") != "B") {
+			a = e.find("b").eq(0);
+			c = e.parent().find("dd").eq(0);
+		}
+	}
+	if (a.length) {
+		if (a.hasClass("current")) {
+			a.html("+");
+			a.removeClass("current");
+			c.addClass("none");
+			return false;
+		} else {
+			a.html("&minus;");
+			a.addClass("current");
+			c.removeClass("none");
+		}
+	}
+}
+		</script>
+<div class="category">
+      <div class="cate_title">所有分类</div>
+	  <!--{foreach from=get_categories_tree() item=cat name=cat_tree}-->
+      <div class="category_title" onclick="toggleCatgory1({$smarty.foreach.cat_tree.index});return false;"><a class="" href="{$cat.url}" id="JS_category_title_{$smarty.foreach.cat_tree.index}" onclick="return false;">{$cat.name|escape:html}</a><span class="icon2" id="JS_category_icon2_{$smarty.foreach.cat_tree.index}">{if $smarty.foreach.cat_tree.index eq 0}-{else}+{/if}</span></div>
+      <div id="JS_category_body_{$smarty.foreach.cat_tree.index}" class="category_body {if $smarty.foreach.cat_tree.index neq 0}none{/if}">
+	  <!--{foreach from=$cat.cat_id item=child name=cat_cat_id}-->	
+        <dl class="wofang {if $smarty.foreach.cat_cat_id.iteration eq 1}first{/if}">
+          <dt><b class="{if $child.id eq $p_id || $child.id eq $category}current{/if}" onclick="toggleCatgory2(this);return false;">{if $child.id eq $p_id || $child.id eq $category}−{else}+{/if}</b><a href="{$child.url}" title="{$child.name|escape:html}">{$child.name|escape:html}</a></dt>
+          <dd class="{if $child.id eq $p_id || $child.id eq $category}{else}none{/if}"> <!--{foreach from=$child.cat_id item=childer}--><span><a {if $childer.id eq $category}class="current"{/if} href="{$childer.url}">{$childer.name|escape:html}</a></span><!--{/foreach}--> </dd>
+        </dl>
+	   <!--{/foreach}-->	
+        
+      </div>
+	  <!--{/foreach}-->
+      
+    </div>

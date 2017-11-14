@@ -1,0 +1,123 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+.sideMenu {width: 200px;height: 388px;margin-right: 10px;float: left;}
+.sideMenu .in{width: 198px;border: solid 1px #DDD;background: white;}
+.sideMenu .head{height: 41px;line-height: 41px;	text-align: center;	border-bottom: solid 1px #DDD;background: #F2F2F2;font-size: 18px;
+	font-family: 微软雅黑;}
+.sideMenu .catItem{position:relative;height:61px;z-index: 30;}
+.sideMenu .catItem.cat_bg{background:#f7f1f1;}
+.sideMenu .catItem .item_show{position:absolute;z-index:2;padding:8px 10px;}
+.sideMenu .catItem .item_show .dt{height:24px;line-height:24px;display: inline-block;width: 180px;}
+.sideMenu .catItem .item_show .dt .t{display:inline-block;font-weight:bold;font-size:14px;font-family:微软雅黑;float:left;}
+.sideMenu .catItem .item_show .dt .t img{margin-right: 10px; vertical-align: middle; background: none;border: none;}
+.sideMenu .catItem .item_show .dt .arrow{color:#b0b0b0;float:right;}
+.sideMenu .catItem .item_show .dd{margin-top:4px;overflow:hidden;}
+.sideMenu .body{/*height: 366px;*/}
+.sideMenu .hover .item_show{width:180px;padding:7px 10px;background:#fff;border-left:solid 4px #d52a50;border-top:solid 1px #bcbcbc;border-bottom:solid 1px #bcbcbc;z-index:3;}
+.sideMenu .hover .item_show .t{color:#d52a50;}
+.sideMenu .catItem .coverMenu{width: 480px;height: auto;border: solid 1px #BCBCBC;box-shadow: 1px 1px 8px #999;background: white;position: absolute;z-index: 1;left: 203px;top: 0px;display: none;}
+.sideMenu .hover .coverMenu{display: block;}
+.sideMenu .catItem .item_show {height: 45px;}
+.sideMenu .catItem .item_show .dd {height: 17px;line-height: 17px;}
+.sideMenu .coverMenu .allCat,.coverMenu .activity{padding:0 20px;}
+.sideMenu .coverMenu .ctitle{color: #C00;line-height: 30px;padding-top: 10px;border-bottom: 1px solid #ECECEC;font-weight: bold;}
+.sideMenu .coverMenu .cat{padding-top:0;}
+.sideMenu .coverMenu .allCat .link{line-height: 24px;padding-top: 5px;}
+.sideMenu .coverMenu .allCat .link span.gray{color: #E4E4E4;white-space: nowrap;word-wrap: break-word;}
+.sideMenu .coverMenu .activity ul{padding-top: 10px;}
+.sideMenu .coverMenu .activity ul li{float: left;height: 24px;line-height: 24px;width: 170px;padding-right: 10px;overflow: hidden;}
+.sideMenu .coverMenu .brand{margin: 10px 0;height: 60px;padding-top: 20px;overflow: hidden;background: #F9F9F9;border-top: 1px solid #F2F2F2;}
+.sideMenu .coverMenu .brand a.first{border-left: none;}
+.sideMenu .coverMenu .brand a{display: inline-block;width: 119px;text-align: center;height: 50px;border-left: 1px dashed #E8E8E8;}
+.sideMenu .d1{}
+.sideMenu .d2{margin-top:-60px;}
+.sideMenu .d4{margin-top:-60px;}
+.sideMenu .d5{margin-top:-120px;}
+.sideMenu .d6,.sideMenu .d7,.sideMenu .d8,.sideMenu .d9,.sideMenu .d10,.sideMenu .d11,.sideMenu .d12,.sideMenu .d13,.sideMenu .d14,.sideMenu .d15,.sideMenu .d16,.sideMenu .d17,.sideMenu .d18,.sideMenu .d19,.sideMenu .d20{margin-top:-180px;}
+.root_body .sideMenu .fixedLay{position:fixed;top:0px;z-index:10;_position:absolute;_top:expression(offsetParent.scrollTop);_right:expression(this.offsetRight);}
+.root_body .sideMenu .in{width: 203px;}
+</style>
+<div class="sideMenu">
+<div id="JS_fixed_goods_cat" class="in">
+  <div class="head">所有{foreach from=get_cat_info_ex($GLOBALS['smarty']->_var['category']) item=cat name=get_cat_info}{$cat.cat_name}{/foreach}商品分类</div>
+  <div class="body">
+  <!--{foreach from=get_categories_tree() item=cat name=get_categories_tree}-->
+  {if $cat.id eq $category}
+  <!--{foreach from=$cat.cat_id item=child name=cat_cat_id}-->
+  {if $smarty.foreach.cat_cat_id.iteration < 8}
+    <div class="catItem {if $smarty.foreach.cat_cat_id.iteration % 2 eq 0}cat_bg{/if}" id="JS_jiaju_index_cat_menu_{$smarty.foreach.cat_cat_id.iteration}">
+      <dl class="item_show">
+        <dt class="dt"><a href="{$child.url}" title="{$child.name|escape:html}" class="t">{$child.name|escape:html}</a><strong class="arrow">&gt;</strong></dt>
+        <dd class="dd">
+		<!--{foreach from=$child.cat_id item=childer name=child_cat_id}-->
+		{if $smarty.foreach.child_cat_id.iteration < 4}
+		<a href="{$childer.url}" title="{$childer.name|escape:html}" target="_blank">{$childer.name|escape:html}</a>&emsp;
+		{/if}
+		<!--{/foreach}-->
+		</dd>
+      </dl>
+      <div id="JS_goods_cat_target_{$smarty.foreach.cat_cat_id.iteration}" class="coverMenu d1"></div>
+    </div>
+	{/if}
+	<!--{/foreach}-->
+	{/if}
+	<!--{/foreach}-->
+    
+  </div>
+</div>
+<!--{foreach from=get_categories_tree() item=cat name=get_categories_tree}-->
+  {if $cat.id eq $category}
+  <!--{foreach from=$cat.cat_id item=child name=cat_cat_id}-->
+  {if $smarty.foreach.cat_cat_id.iteration < 8}
+<textarea id="JS_goods_cat_source_{$smarty.foreach.cat_cat_id.iteration}" class="none"><div class="allCat">
+			                
+			<div class="cat ctitle"><a href="{$child.url}" target="_blank" title="{$child.name|escape:html}">{$child.name|escape:html}</a></div>
+			<div class="link">
+			<!--{foreach from=$child.cat_id item=childer name=child_cat_id}-->
+			<span class="gray">|&emsp;<a href="{$childer.url}" target="_blank" title="{$childer.name|escape:html}">{$childer.name|escape:html}</a>&emsp;</span>
+			<!--{/foreach}-->					
+
+							</div>                
+					</div>
+		<div class="activity">
+			<div class="ctitle">促销活动</div>
+			<ul class="clearfix">
+			{foreach from=get_navad_by_cat_id($this->_var['child']['id']) item=ad name=index_image}
+				<li><a href="{$ad.url}" target="_blank" title="{$ad.ad_code}">&bull; {$ad.ad_code}</a></li>
+			{/foreach}	
+			</ul>
+		</div>
+		<!--
+		<div class="brand clearfix" style="height:62px;padding-top:8px;"><!--{foreach from=get_cat_brands($this->_var['child']['id']) item=brandCat name=get_cat_brands}-->{if $smarty.foreach.get_cat_brands.iteration < 5}<a title="{$brandCat.name}" {if $smarty.foreach.get_cat_brands.iteration eq 1}class="first"{/if} href="{$brandCat.url}" target="_blank"><img src="data/brandlogo/{$brandCat.logo}" width="100" height="50" alt="{$brandCat.name}" /></a>{/if}<!--{/foreach}-->
+		</div>
+		-->
+</textarea>
+<script type="text/javascript">
+		_onReadyList.push(function(){
+			$('#JS_jiaju_index_cat_menu_{$smarty.foreach.cat_cat_id.iteration}').hover(function(){
+				_show_(this,{source:'JS_goods_cat_source_{$smarty.foreach.cat_cat_id.iteration}',target:'JS_goods_cat_target_{$smarty.foreach.cat_cat_id.iteration}'});
+			},function(){
+				_hide_(this);
+			})
+		});
+		</script>
+{/if}
+<!--{/foreach}-->
+{/if}
+<!--{/foreach}-->
+
+<script type="text/javascript">
+		_onReadyList.push(
+			function(){
+				var screenWidth_1=window.screen.width;
+				if(screenWidth_1<1280)
+				{
+					$('#JS_fixed_goods_cat .catItem').each(function(index,element){
+						if(index>5)
+							$(element).hide();
+					})
+				}
+			}
+		);
+	</script>
+</div>

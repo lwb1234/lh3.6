@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<ul class="ad_list clearfix" id="best_goods_list">
+	<!--{foreach from=get_cat_best_goods_3($GLOBALS['smarty']->_var['top_id']) item=goods_item name=hot_goods}-->
+      <li class="clearfix {if $smarty.foreach.hot_goods.iteration eq 3}SCREEN_SHOW{/if}">
+        <div class="img Left"> <a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank"><img src="images/blank.gif" data-src="{$goods_item.thumb}" width="185" height="124" alt="{$goods_item.name|escape:html}" /></a> </div>
+        <div class="info Right"> <a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank" class="ad_goods_name">
+          <p class="orange">{$goods_item.short_name|escape:html}</p>
+          </a>
+          <p class="red">本站价：<span class="yen"><strong class="f16 JS_show_price_ajax"><!-- {if $goods_item.promote_price neq ""} -->{$goods_item.promote_price}<!-- {else}-->{$goods_item.shop_price}<!--{/if}--></strong></span></p>
+          <a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank" class="buy_now c">去看看</a> </div>
+      </li>
+	  <!--{/foreach}--> 
+    </ul>
+	<script language="javascript">
+$("#best_goods_list").each(
+	function(i){
+		var l = $(this).html();
+		if ($.trim(l) == ''){
+			$(this).hide();
+		}
+	}
+);
+
+</script>

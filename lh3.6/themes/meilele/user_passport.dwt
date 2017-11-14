@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css?1122" />
+<link rel="stylesheet" href="themes/meilele/css/user3.min.css?1145" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,user.js,transport.js'}
+{insert_scripts files='utils.js'}
+</head>
+<body>
+<div id="" class="user_all w" style="position:relative;">
+  <div id="" class="user_header clearfix" style="padding:15px 0px;">
+    <div class="logo Left" style="background: url(images/logo_user.png) 0 0 no-repeat;width:146px;height:53px"><a href="/" title="返回黎华首页"><img style="background:none" src="images/blank.gif" width="146" height="53" border="0" alt="黎华家具装饰材料城"></a></div>
+  </div>
+  <!-- {if $action eq 'login'} -->
+  <div id="" class="user_content clearfix type_login">
+    <h1 class="yahei" style="position: absolute;top: 40px;left: 160px; font-size: 24px; padding: 0;">用户登录</h1>
+    <div id="" class="user_login Right user_login_new">
+      <form  id="JS_login_form" class="username_box" name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
+        <div class="clearfix user_type_user">
+          <h3 class="user_type Left">用户名</h3>
+        </div>
+        <p>
+          <input value="" type="text" name="username" class="users_input" id="login_uname" tabindex="1">
+        </p>
+        <div id="login_uname_a" class="error"></div>
+        <div class="clearfix user_type_user">
+          <h3 class="user_type Left">密码</h3>
+        </div>
+        <p>
+          <input type="password" name="password" class="users_input" id="login_uname_p" tabindex="2">
+        </p>
+        <div id="login_uname_p_a" class="error"></div>
+        <!-- 判断是否启用验证码{if $enabled_captcha} -->
+        <div id="JS_login_captcha_1">
+          <h3 class="user_type">验证码</h3>
+          <p>
+            <input type="text" name="captcha" class="register_input verify_input" id="login_uname_c" tabindex="3">
+            <img src="captcha.php?is_login=1&{$rand}" alt="captcha" class="fkcaptcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </p>
+          <div class="gray error">请输入图片中的字符，不区分大小写！</div>
+        </div>
+        <!--{/if}-->
+        <div class="clearfix">
+          <p class="Left">
+            <label>
+            <input type="checkbox" id="JS_rember_username" name="remember" style="vertical-align:middle;" tabindex="5">
+            自动登录</label>
+          </p>
+          <a href="user.php?act=get_password" class="forget Right user_type_user" tabindex="6">忘记密码？</a> </div>
+        <div id="login_submit0" class="operate">
+          <input type="submit" name="submit" value="登录" class="users_submit white f16 yahei" />
+        </div>
+        <div id="login_submit1" class="operate none"> <a class="users_submit white f16 yahei" id="">正在验证</a> </div>
+        <input type="hidden" name="act" value="act_login" />
+        <input type="hidden" name="back_act" value="{$back_act}" />
+      </form>
+      <div class="r" style="margin-top:30px;border-top: 1px solid #eee; padding: 10px 0;"><a class="red bold" href="user.php?act=register">立即注册>></a></div>
+      <div class="none"></div>
+    </div>
+    <div id="" class="user_register Left" style="padding-top:20px;color:#555;width:436px;">
+       <img src="images/login_logo.png" width="436" height="310" class="mt10" style="background:#fff" /> </div>
+  </div>
+  <!--{/if}-->
+  <!--{if $action eq 'register'}-->
+  <div id="" class="user_content clearfix type_register">
+    <div id="" class="user_login Left">
+      <h1 class="yahei" style="padding-left:10px;">注册新用户</h1>
+      <form  id="JS_register_form" action="user.php" method="post" name="formUser" onsubmit="return register();">
+        <div id="" class="register_box">
+          <p>
+            <label class="tips">帐户名：</label>
+            <input type="text" name="username" class="register_input" id="register_username" onblur="is_registered(this.value);" autocomplete="off" tabindex="1">
+          </p>
+          <div id="username_notice" class="error error2" style=" border:1px solid #FFFFFF; background-color:#FFFFFF;visibility: visible;"> *</div>
+          <p>
+            <label class="tips">{$lang.label_email}：</label>
+            <input type="text" name="email" class="register_input" id="email"  onblur="checkEmail(this.value);"  autocomplete="off" tabindex="2">
+          </p>
+          <div id="email_notice" class="error error2" style=" border:1px solid #FFFFFF; background-color:#FFFFFF;visibility: visible;"> *</div>
+          <p>
+            <label class="tips">设置密码：</label>
+            <input type="password" name="password" class="register_input" onblur="check_password(this.value);" id="password1" tabindex="3">
+            <span id="register_pw_s" class="success" style="display:none;"></span></p>
+          <div id="password_notice" class="error error2" style=" border:1px solid #FFFFFF; background-color:#FFFFFF;visibility: visible;"> *</div>
+          <p>
+            <label class="tips">确认密码：</label>
+            <input type="password" name="confirm_password" class="register_input" onblur="check_conform_password(this.value);" id="conform_password" tabindex="4">
+            <span id="register_rpw_s" class="success" style="display:none;"></span></p>
+          <div id="conform_password_notice" class="error error2" style=" border:1px solid #FFFFFF; background-color:#FFFFFF;visibility: visible;"> *</div>
+          <!-- {foreach from=$extend_info_list item=field} -->
+          <!-- {if $field.id eq 6} -->
+          <!-- {else} -->
+          <p style="margin-bottom:25px">
+            <label class="tips"><font 
+            <!-- {if $field.is_need} -->
+            id="extend_field{$field.id}i"
+            <!--{/if}-->
+            >{$field.reg_field_name}</font>：</label>
+            <input type="text" name="extend_field{$field.id}" class="register_input"  autocomplete="off" tabindex="10">
+            <!-- {if $field.is_need} -->
+            <span class="red" style="padding-left:5px"> *</span>
+            <!-- {/if} -->
+          </p>
+          <!-- {/if} -->
+          <!-- {/foreach} -->
+          <!-- 判断是否启用验证码{if $enabled_captcha} -->
+          <p id="register_captcha_e">
+            <label class="tips">验证码：</label>
+            <input type="text" name="captcha" class="register_input verify_input" id="register_captcha" tabindex="14">
+            <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </p>
+          <!--{/if}-->
+          <p class="readed gray">
+            <label>
+            <input name="agreement" type="checkbox" value="1" checked="checked" />
+            {$lang.agreement}</label>
+          </p>
+          <div id="register_submit0" class="operate" style="padding-left:100px;">
+            <input name="Submit" type="submit" value="注 册" class="users_submit white f16 yahei">
+          </div>
+          <input name="act" type="hidden" value="act_register" >
+          <input type="hidden" name="back_act" value="{$back_act}" />
+        </div>
+      </form>
+    </div>
+    <div id="" class="user_register Right" style="color:#555;padding-top:40px;"> 已经有帐号？请直接登录 <a href="user.php" class="logintoreg users_submit users_submit2 white f16 yahei" style="color:#666!important;">登&emsp;录</a> </div>
+  </div>
+  <!--{/if}-->
+  <!--{if $action eq 'get_password'} -->
+  {insert_scripts files='utils.js'}
+  <script type="text/javascript">
+    {foreach from=$lang.password_js item=item key=key}
+      var {$key} = "{$item}";
+    {/foreach}
+    </script>
+  <div id="" class="findpwd_content">
+    <h1 class="yahei">找回密码</h1>
+    <div id="" class="find_box">
+      <ul class="find_trg clearfix" id="find_trg">
+      </ul>
+      <div id="" class="find_form">
+        <form action="user.php" method="post" name="getPassword" onsubmit="return submitPwdInfo();">
+          <div id="form_email" class="form_uname">
+            <p class="input" style="margin-bottom:15px">
+              <label>{$lang.username}：</label>
+              <input type="text" name="user_name" class="find_input" id="user_name">
+            </p>
+            <p class="input">
+              <label>邮箱：</label>
+              <input type="text" name="email" class="find_input" id="email">
+            </p>
+            <div id="" class="find_sbox">
+              <input type="hidden" name="act" value="send_pwd_email" />
+              <input type="submit"  name="submit" class="find_button" value="{$lang.submit}" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!--{/if}-->
+  <!-- {if $action eq 'reset_password'} -->
+  <script type="text/javascript">
+    {foreach from=$lang.password_js item=item key=key}
+      var {$key} = "{$item}";
+    {/foreach}
+    </script>
+	<div id="" class="findpwd_content">
+    <h1 class="yahei">重置密码</h1>
+    <div id="" class="find_box">
+      <ul class="find_trg clearfix" id="find_trg">
+      </ul>
+      <div id="" class="find_form">
+        <form action="user.php" method="post" name="getPassword2" onSubmit="return submitPwd()">
+          <div id="form_email" class="form_uname">
+            <p class="input" style="margin-bottom:15px">
+              <label>{$lang.new_password}：</label>
+              <input name="new_password" type="password" size="25" class="find_input" />
+            </p>
+            <p class="input">
+              <label>{$lang.confirm_password}：</label>
+              <input name="confirm_password" type="password" size="25"  class="find_input"/>
+            </p>
+            <div id="" class="find_sbox">
+              <input type="hidden" name="act" value="act_edit_password" />
+            <input type="hidden" name="uid" value="{$uid}" />
+            <input type="hidden" name="code" value="{$code}" />
+            <input type="submit" name="submit" value="{$lang.confirm_submit}"  class="find_button"/>
+     
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--{/if}-->
+</div>
+<div class="footer-box">
+  <div class="w footer-copy">
+    <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+    <a href="{$nav.url}"  
+    
+    <!-- {if $nav.opennew eq 1} -->
+    target="_blank"
+    <!-- {/if} -->
+    >{$nav.name}</a>
+    <!-- {if !$smarty.foreach.nav_bottom_list.last} -->
+    |
+    <!-- {/if} -->
+    <!-- {/foreach} -->
+    <br />
+    {$copyright}<br />
+    {$shop_address} {$shop_postcode}
+    <!-- 客服电话{if $service_phone} -->
+    Tel: {$service_phone}
+    <!-- 结束客服电话{/if} -->
+    <!-- 邮件{if $service_email} -->
+    E-mail: {$service_email}<br />
+    <!-- 结束邮件{/if} -->
+    <!-- QQ 号码 {foreach from=$qq item=im} -->
+    <!-- {if $im} -->
+    <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a>
+    <!-- {/if} -->
+    <!-- {/foreach} 结束QQ号码 -->
+    <!-- 淘宝旺旺 {foreach from=$ww item=im} -->
+    <!-- {if $im} -->
+    <a href="http://amos1.taobao.com/msg.ww?v=2&uid={$im|escape:u8_url}&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$im|escape:u8_url}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" />{$im}</a>
+    <!-- {/if} -->
+    <!--{/foreach} 结束淘宝旺旺 -->
+    <!-- Yahoo Messenger {foreach from=$ym item=im} -->
+    <!-- {if $im} -->
+    <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a>
+    <!-- {/if} -->
+    <!-- {/foreach} 结束Yahoo Messenger -->
+    <!-- MSN Messenger {foreach from=$msn item=im} -->
+    <!-- {if $im} -->
+    <img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a>
+    <!-- {/if} -->
+    <!-- {/foreach} 结束MSN Messenger -->
+    <!-- Skype {foreach from=$skype item=im} -->
+    <!-- {if $im} -->
+    <img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a>
+    <!-- {/if} -->
+    <!-- {/foreach} -->
+    <br />
+    <!-- ICP 证书{if $icp_number} -->
+    {$lang.icp_number}:<a href="http://www.miibeian.gov.cn/" target="_blank">{$icp_number}</a><br />
+    <!-- 结束ICP 证书{/if} -->
+  </div>
+</div>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+{foreach from=$lang.passport_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var username_exist = "{$lang.username_exist}";
+</script>
+</body>
+</html>
+<!--
+GERMANY:2013-11-28 15:26:03
+-->

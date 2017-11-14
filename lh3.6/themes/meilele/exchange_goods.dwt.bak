@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<script src="themes/meilele/js/jq.js"></script>
+<script src="themes/meilele/js/jquery.json.min.js"></script>
+
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css?1122" />
+<link href="themes/meilele/css/goods_wide.min.css?1112fv" rel="stylesheet" type="text/css" />
+{insert_scripts files='common.js,user.js,utils.js'}
+<script src="themes/meilele/js/common.js"></script>
+<link href="themes/meilele/css/magiczoom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="themes/meilele/js//mzp-packed-me.js"></script>
+</head>
+<body>
+<script type="text/javascript">(function(){var screenWidth=window.screen.width;if(screenWidth>=1280){document.body.className="root_body";window.LOAD=true;}else{window.LOAD=false;}})()</script>
+
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem --> 
+{foreach from=get_advlist_by_id(15) item=ad name=index_image}
+<div class="w mt10 mb10 top_banner" style="height:60px;overflow:hidden;" id="JS_banner">
+  <div id="JS_banner_in">
+  <a href="{$ad.url}" title="{$ad.name}" target="_blank" style="display:block;height:60px;background:url({$ad.image}) center 0 no-repeat;"><img src="images/blank.gif" style="background:none" height="60" width="100%"></a>
+  </div>
+</div>
+{/foreach}
+<div id="JS_nav_guide" class="nav_guide w"><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></div>
+
+<div class="goods_title w" id="JS_goods_title_34742">
+  <h1 class="goods_name"><span id="JS_attr_title_name">{$goods.goods_style_name}</span> <span class="goods_sn" id="JS_attr_title_sn">编号：{$goods.goods_sn}</span> <strong id="JS_attr_title_event" class="red f14"></strong> </span> </h1>
+  <h2 class="goods_sub_title red" id="JS_attr_sub_title"> {$goods.goods_brief} </h2>
+</div>
+<div class="w clearfix">
+  <div class="big_img Left">
+    <div id="JS_view_current_big_img">
+      <div class="img">
+        <div id="JS_attr_limit_buy" class="img_tags limit_buy" style="display:none"></div>
+       
+        <a id="Zoomer" class="MagicZoomPlus" rel="" title="点击查看{$goods.goods_name|escape:html}图片"  href="{$pictures.0.img_url}" onclick="window.open('gallery.php?id={$goods.goods_id}'); return false;"> <img src="{$pictures.0.img_url}" width="565" height="374" alt="{$goods.goods_name|escape:html}" /> </a></div>
+      <a class="float_view" href="javascript:;" onclick="window.open('gallery.php?id={$goods.goods_id}'); return false;" title="点击查看{$goods.goods_name|escape:html}图片"></a> </div>
+	  <script language="javascript">
+	  var screenWidth=window.screen.width;
+	  if(screenWidth>=1280){
+	  		$('#Zoomer').attr('rel', 'selectors-effect:false;zoom-fade:true;background-opacity:70;zoom-width:620;zoom-height:372;caption-source:img:title;thumb-change:mouseover');
+		}else{
+			$('#Zoomer').attr('rel', 'selectors-effect:false;zoom-fade:true;background-opacity:70;zoom-width:410;zoom-height:372;caption-source:img:title;thumb-change:mouseover');
+		}
+	  
+	  </script>
+	  <!-- #BeginLibraryItem "/library/goods_gallery.lbi" --><!-- #EndLibraryItem -->
+    <div class="extra clearfix">
+      <div id="bdshare" class="Left bdshare_t bds_tools get-codes-bdshare">
+        <div class="bds_more extra_field share_bd"> <span class="extra_icon"></span><span class="extra_text">分享</span> </div>
+      </div>
+      <div id="JS_collect_2" class="Left extra_field collect" onClick="javascript:collect({$goods.goods_id})"> <span class="extra_icon"></span><span class="extra_text co red">收藏</span><span class="extra_text cd">已收藏</span> </div>
+
+      <span class="gray Right share_text">付款方式：<a class="pays gray" target="_blank" title="付款方式">支付宝|网银|刷卡</a></span>
+     
+    </div>
+  </div>
+  <div id="JS_panel_34742" class="panel Right current">
+    <div class="sale_price">
+
+      <div class="p_left"><span class="red" id="JS_panel_price_type_34742">积&emsp;分：</span><span id="JS_panel_show_price_34742" class="red f24 yen bold">{$goods.exchange_integral}</span>&emsp;&emsp;
+        
+      </div>
+    </div>
+    <div class="infos clearfix">
+      <ul>
+        <li class="gray">品&emsp;牌：<a href="{$goods.goods_brand_url}" >{$goods.goods_brand}</a></li>
+        
+        <li class="gray">服&emsp;务：由 <span class="red">美乐乐</span> 发货并提供售后服务。</li>
+        <li id="JS_panel_gift_34742" class="gray none"></li>
+        <li class="tips" id="JS_panel_tips_nav_34742">
+          
+          <div class="tips_i_box"><a id="JS_expr_url" class="tip_i first" target="_blank">到店体验</a><span class="line">|</span><a class="tip_i" target="_blank">45天退换</a><span class="line">|</span><a class="tip_i" target="_blank">质保三年</a><span class="line">|</span><a class="tip_i" target="_blank">价格保护</a></div>
+         </li>
+        
+      </ul>
+    </div>
+	<script language="javascript">
+	  function changeAtt(t) {
+		var obj = document.getElementById('spec_value_'+t.getAttribute("name"));
+		if (obj){
+			obj.checked='checked';
+		}
+		
+		for (var i = 0; i<t.parentNode.childNodes.length;i++) {
+				if (t.parentNode.childNodes[i].className == 'current') {
+					t.parentNode.childNodes[i].className = '';
+				}
+			}
+		t.className = "current";
+		changePrice();
+		}
+	  </script>
+	<form action="exchange.php?act=buy" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+	<input type="hidden" name="goods_id" value="{$goods.goods_id}" />
+    <div id="JS_join_list" class="choose">
+	<!-- {* 开始循环所有可选属性 *} -->
+      <!-- {foreach from=$specification item=spec key=spec_key} -->
+	  <!-- {if $spec.attr_type eq 1} -->
+                      <!-- {if $cfg.goodsattr_style eq 1} -->
+      <dl class="clearfix">
+        <dt>{$spec.name}：</dt>
+        <dd>
+		<!-- {foreach from=$spec.values item=value key=key  name=spec_values} -->
+		<a class="{if $smarty.foreach.spec_values.index eq 0}current{/if}" onclick="changeAtt(this)" href="javascript:;" target="_self"  name="{$value.id}" title="{$value.label}">{$value.label}</a>
+		<input style="display:none" id="spec_value_{$value.id}" type="radio" name="spec_{$spec_key}" value="{$value.id}" {if $smarty.foreach.spec_values.index eq 0}checked{/if} />  
+            <!-- {/foreach} --> 
+		
+		</dd>
+      </dl>
+	  <input type="hidden" name="spec_list" value="{$key}" />
+				  <!-- {/if} -->
+			      <!-- {/if} --> 
+		<!-- {/foreach} -->
+      <!-- {* 结束循环可选属性 *} -->	
+      
+
+      <div class="buttons"><input type="submit" value="{$lang.exchange_goods}"  style="padding:5px 30px"/>
+      </div>
+    </div>
+	</form>
+    
+  </div>
+</div>
+
+
+<div class="w clearfix mt10">
+  <div class="main_left Left">
+   
+    <h2 class="group_title">浏览历史</h2>
+    <ul class="tab_body">
+	<!--{foreach from=get_history() item=item name=historys}-->
+      <li class="first">
+        <div class="img"> <a href="{$item.url}" title="{$item.short_name}" target="_blank"> <img src="images/blank.gif" data-src="{$item.goods_thumb}" width="178" height="116" alt="{$item.short_name}" /> </a> </div>
+        <div class="info c"> <a href="{$item.url}" title="{$item.short_name}" target="_blank">{$item.short_name}</a>
+          <p><span>本站价：</span><span class="yen red">{$item.shop_price}</span></p>
+        </div>
+      </li>
+     <!--{/foreach}--> 
+    </ul>
+  </div>
+  <div class="main_right Right">
+    <div class="navs">
+      <div style="height:0px;position:absolute;" id="JS_float_navs_position"></div>
+      <div class="float_navs" id="JS_float_navs"><a class="current first" href="javascript:;" id="JS_Tab_nav_xinxi">商品详情</a><a href="javascript:;" id="JS_Tab_nav_guige">规格参数</a></div>
+    </div>
+    <div class="xinxi clearfix mt10" id="JS_Tab_body_xinxi">
+      
+      <div class="tupian mt10">
+        {$goods.goods_desc}
+       
+      </div>
+    </div>
+    <div class="guige mt10" id="JS_Tab_body_guige">
+      <div class="tab_title"> <span class="icon"></span>
+        <h2>规格参数</h2>
+      </div>
+      <table class="norm_info mt10">
+        <tr>
+          <th colspan="2" class="norm_title f14">产品参数</th>
+        </tr>
+		<!-- {foreach from=$properties item=property_group key=key} -->
+		<!-- {foreach from=$property_group item=property} -->
+        <tr>
+          <th class="r norm_left">{$property.name|escape:html}</th>
+          <td>{$property.value}</td>
+        </tr>
+        <!-- {/foreach}-->
+        <!-- {/foreach}-->
+		
+      </table>
+    </div>
+    
+  </div>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+var goods_id = {$goods_id};
+var goodsattr_style = {$cfg.goodsattr_style|default:1};
+var gmt_end_time = {$promote_end_time|default:0};
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var goodsId = {$goods_id};
+var now_time = {$now_time};
+
+onload = function(){
+  
+}
+
+
+
+<!-- {/literal} -->
+</script>
+
+
+<script type="text/javascript" src="themes/meilele/js/back_to_top.min.js?1121fv"></script>
+<script type="text/javascript" src="themes/meilele/js/goods_wide.min.js?1121fv"></script>
+<script type="text/javascript">
+
+GL['34742'] = new Good({
+	"goods_id": "34742",
+	"show_type": "0",
+	"goods_thumb_1": "",
+	"ship_type": "1",
+	"is_logistics": "0",
+	"is_delete": "0",
+	"is_on_sale": "1",
+	"is_parent_goods": "0",
+	"calc_type": "1",
+	"goods_weight": "0",
+	"goods_sn": "",
+	"cloth_goods_id": "",
+	"goods_volume": "0.1952",
+	"stock_volumn": "0.1952",
+	"goods_name": "",
+	"limit_sale": "0",
+	"discount_price": "0.00",
+	"goods_thumb": "",
+	"style_id": "303",
+	"cat_id": "275",
+	"brand_id": "213",
+	"material_id": "304",
+	"goods_attribute": "0",
+	"shop_id": "1",
+	"shop_name": "",
+	"cname": "",
+	"style_name": "",
+	"brand_name": "",
+	"discount_type": "1",
+	"red_title": "",
+	"clo_goods_id": null,
+	"material_name": "",
+	"add_time": "1308695210",
+	"quotiety": "0.00",
+	"img_leftshow_text": "0",
+	"goods_list_tag": "0",
+	"real_unit_use": "0",
+	"change_unit_use": "1",
+	"change_unit_ratio": "1.00000",
+	"goods_unitname": "",
+	"discount_name": "",
+	"is_fitment": 0,
+	"is_haier": 0,
+	"is_redpacket": 0,
+	"chandi": "",
+	"brand_url": "",
+	"style_url": "",
+	"material_url": "",
+	"price_type": {
+		
+	},
+	"activity_type": "",
+	"goods_activity_name": [],
+	"favourite_num": 8287,
+	"click": 7587,
+	"sales_num": "1071",
+	"attr_info": {
+		"color_list": false,
+		"spec_list": {
+			
+		},
+		"sofa_list": false,
+		"material_list": false
+	},
+	"join_list": null,
+	"page_title": "",
+	"real_unit_use_name": "",
+	"change_unit_use_name": "",
+	"relate_parent": [],
+	"relate_show": [],
+	"pinyin": "dianshigui",
+	"exchange_limit": null
+});
+goodsInit();
+</script>
+
+<script type="text/javascript" id="bdshare_js" data="type=tools"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+
+</body>
+</html>

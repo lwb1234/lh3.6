@@ -1,0 +1,117 @@
+<!-- $Id: goodHs_trash.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,../js/transport.js,listtable.js"}
+
+<!-- 商户搜索 -->
+{include file="goodHs_search.htm"}
+
+<!-- 商户列表 -->
+<form method="post" action="" name="listForm" onsubmit="return confirmSubmit(this)">
+  <!-- start goodHs list -->
+  <div class="list-div" id="listDiv">
+{/if}
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>
+      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+      <a href="javascript:listTable.sort('goodHs_id'); ">{$lang.record_id}</a>{$sort_goodHs_id}
+    </th>
+    <th><a href="javascript:listTable.sort('goodHs_name'); ">商户名称</a>{$sort_goodHs_name}</th>
+    <th><a href="javascript:listTable.sort('goodHs_sn'); ">商户编号</a>{$sort_goodHs_sn}</th>
+    <!--<th><a href="javascript:listTable.sort('shop_price'); ">{$lang.shop_price}</a>{$sort_shop_price}</th>-->
+    <th>{$lang.handler}</th>
+  <tr>
+  {foreach from=$goodHs_list item=goodHs}
+  <tr>
+    <td><input type="checkbox" name="checkboxes[]" value="{$goodHs.goodHs_id}" />{$goodHs.goodHs_id}</td>
+    <td>{$goodHs.goodHs_name|escape:html}</td>
+    <td>{$goodHs.goodHs_sn}</td>
+    <td align="right">{$goodHs.shop_price}</td>
+    <td align="center">
+      <a href="javascript:;" onclick="listTable.remove({$goodHs.goodHs_id}, '{$lang.restore_goodHs_confirm}', 'restore_goodHs')">{$lang.restore}</a> |
+      <a href="javascript:;" onclick="listTable.remove({$goodHs.goodHs_id}, '{$lang.drop_goodHs_confirm}', 'drop_goodHs')">{$lang.drop}</a>
+    </td>
+  </tr>
+  {foreachelse}
+  <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+  {/foreach}
+</table>
+<!-- end goodHs list -->
+
+<!-- 分页 -->
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td>
+      <input type="hidden" name="act" value="batch" />
+      <select name="type" id="selAction" onchange="changeAction()">
+        <option value="">{$lang.select_please}</option>
+        <option value="restore">{$lang.restore}</option>
+        <option value="drop">{$lang.remove}</option>
+      </select>
+      <select name="target_cat" style="display:none" onchange="checkIsLeaf(this)"><option value="0">{$lang.select_please}</caption>{$cat_list}</select>
+      <input type="submit" value="{$lang.button_submit}" id="btnSubmit" name="btnSubmit" class="button" disabled="true" />
+    </td>
+    <td align="right" nowrap="true">
+    {include file="page.htm"}
+    </td>
+  </tr>
+</table>
+</div>
+
+{if $full_page}
+</form>
+
+<script language="JavaScript">
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+
+  {literal}
+  onload = function()
+  {
+    startCheckOrder(); // 开始检查订单
+    document.forms['listForm'].reset();
+  }
+
+  function confirmSubmit(frm, ext)
+  {
+    if (frm.elements['type'].value == 'restore')
+    {
+      {/literal}
+      return confirm("{$lang.restore_goodHs_confirm}");
+      {literal}
+    }
+    else if (frm.elements['type'].value == 'drop')
+    {
+      {/literal}
+      return confirm("{$lang.batch_drop_confirm}");
+      {literal}
+    }
+    else if (frm.elements['type'].value == '')
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+  }
+
+  function changeAction()
+  {
+      var frm = document.forms['listForm'];
+
+      if (!document.getElementById('btnSubmit').disabled &&
+          confirmSubmit(frm, false))
+      {
+          frm.submit();
+      }
+  }
+  {/literal}
+</script>
+{include file="pagefooter.htm"}
+{/if}

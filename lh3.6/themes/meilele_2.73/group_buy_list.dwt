@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css?1122" />
+<link rel="stylesheet" href="themes/meilele/css/tuango.min.css?1030" type="text/css" media="screen" title="no title" charset="utf-8"/>
+<script src="themes/meilele/js/jq.js"></script>
+<script src="themes/meilele/js/common.min.js?0905"></script>
+<script src="themes/meilele/js/jquery.timer.js"></script>
+</head>
+<body style="overflow-x:hidden">
+<script type="text/javascript">
+			window.ISSCREENWIDTH = false;
+			(function() {
+				//return;
+				var screenWidth = window.screen.width;
+				if (screenWidth >= 1280) {
+					document.body.className = "root_body";
+					window.ISSCREENWIDTH = true;
+				}
+			})()
+		</script>
+
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem --> 
+
+
+<div id="tuan_container" class="w">
+  <div class="tg_pos"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->  </div>
+  {foreach from=get_advlist_by_id(7) item=ad name=index_image}
+  <div class="tuan_ad"> <a href="{$ad.url}" title="{$ad.name}"><img src="images/blank.gif" data-src="{$ad.image}" alt="{$ad.name}" style="max-height: 168px" /></a> </div>
+  {/foreach}
+  <div class="tuan_serch">
+    <div class="tuan_serch_t">
+      <h3 class="Left">商品列表</h3>
+      <div class="totalbox Right"> <span class="total">共计<b>{$pager.record_count}</b>件商品</span><span class="page"><span class="pg"><i>{$pager.page}</i>/{$pager.page_count}</span> <!-- {if $pager.page_prev} --><a class="next" href="{$pager.page_prev}" title="上一页">上一页</a><!-- {/if} --><!-- {if $pager.page_next} --><a class="next" href="{$pager.page_next}" title="下一页">下一页</a><!-- {/if} --> </span>
+       
+      </div> </div>
+    
+    
+  </div>
+  <div id="tuan_list" class="tuan_list_container clearfix">
+  <!--{foreach from=$gb_list item=group_buy key=key name=groupname} 循环团购活动开始 -->
+    <div class="tg_list">
+      <div class="tg_goods" onMouseOver="this.className='tg_goods active';" onMouseOut="this.className='tg_goods';">
+        <p class="name"> <a title="{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}" target="_blank" href="{$group_buy.url}">{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}</a> </p>
+        <p class="tg_pic"> <a title="{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}" target="_blank" href="{$group_buy.url}"><img width="266" height="176" alt="{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}" src="images/blank.gif" data-src="{$group_buy.group_img}"></a> <span class="tg_info"><span class="Left" id="over_time_{$smarty.foreach.groupname.iteration}" d='{$group_buy.gmt_time}'>0天0时0分0秒</span><span class="Right">已团购：<b id="JS_already_number_25544">{if $group_buy.isg_rs eq 1}{$group_buy.group_rs}{else}{$group_buy.cur_amount}{/if}</b>个</span></span> </p>
+        <a title="{if $group_buy.group_title}{$group_buy.group_title}{else}{$group_buy.act_name}{/if}" target="_blank" href="{$group_buy.url}" class="delstl gogo" id="JS_state_25544"><strong class="yen"><small>&yen;</small><!-- {foreach from=$group_buy.price_ladder item=item name=foo} --><!-- {if $smarty.foreach.foo.last} -->{$item.price}<!-- {/if} --><!-- {/foreach} --></strong><span><b>{$group_buy.t_discount}</b>折 <br />
+        <i>{$group_buy.market_price}元</i></span></a> </div>
+      <p class="foot"></p>
+      <p class="icon"></p>
+    </div>
+	<script language="javascript">
+	$(function() {
+		                $('#over_time_{$smarty.foreach.groupname.iteration}').everyTime(1000, function() {
+						    
+							var now = new Date();
+							var goodslist = {$group_buy.end_date|default:0};
+							today=new Date();
+							timeold=goodslist*1000 - today.getTime();
+							sectimeold=timeold/1000;
+							secondsold=Math.floor(sectimeold);
+							msPerDay=24*60*60*1000;
+							e_daysold=timeold/msPerDay;
+							daysold=Math.round(e_daysold);
+							e_hrsold=(e_daysold-daysold)*24;
+							hrsold=Math.floor(e_hrsold);
+							e_minsold=(e_hrsold-hrsold)*60;
+							minsold=Math.floor((e_hrsold-hrsold)*60);
+							seconds=Math.floor((e_minsold-minsold)*60);
+							var str = '';
+							if (daysold<0) {
+							str="逾期,倒计时已经失效";
+							}else {
+								if (daysold<1) {
+str="<strong>0</strong>天<strong>"+hrsold+"</strong>"+"小时"+"<strong>"+minsold+"</strong>"+"分"+seconds+"秒";
+								}else {
+str="<strong>"+daysold+"</strong>"+"天"+"<strong>"+hrsold+"</strong>"+"小时"+"<strong>"+minsold+"</strong>"+"分"+seconds+"秒";
+							    }
+							
+							}
+							
+							$(this).html(str);
+						
+					
+
+		                });
+	 });
+	
+	</script>
+    <!--{/foreach}-->
+   
+  </div>
+  <!-- #BeginLibraryItem "/library/pages2.lbi" --><!-- #EndLibraryItem -->
+  
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+<script src="themes/meilele/js/back_to_top.min.js?1127"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+			//图片缓加载
+			var len = document.images.length, src;
+			for (var i = 0; i < len; i++) {
+				img = document.images[i];
+				src = img.getAttribute("data-src");
+				if (src) {
+					img.src = src;
+					img.removeAttribute("data-src");
+				}
+			}	
+			
+			
+			
+				
+		
+		</script>
+
+</body>
+</html>
+<!--
+GERMANY:2013-10-30 18:59:59
+-->

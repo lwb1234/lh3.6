@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css" />
+<link href="themes/meilele/css/category_wide.min.css?1128" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+            .ZhuanPan{ position:relative;width:400px;}
+            #Bkimg{width:400px; height:400px; background:url(images/BkImg150725.png) no-repeat;}
+            #BtnStart{width:163px; height:320px; position:absolute; top:40px; left:119px;}
+            #BtnStart img{cursor:pointer;background:transparent; }
+        </style>
+<script src="themes/meilele/js/jq.js?1119"></script>
+<script src="themes/meilele/js/jquery.json.min.js"></script>
+
+</head>
+<body>
+
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem --> 
+
+<div class="w clearfix" style="background-color:#336699;">
+      <div class="Left ZhuanPan" style="left:50px;background-color:#996633;">
+		<div id="Bkimg"></div>
+                <div id="BtnStart"><img src="images/start.png" id="startbtn1" alt="转盘开启"/></div>
+      </div>
+            <div class="Right ZhuanPan" style="left:-50px">
+                <div id="Bkimg"></div>
+                <div id="BtnStart"><img src="images/start.png" id="startbtn" alt="转盘开启"/></div>
+            </div>  
+     
+</div>
+<div class="w clearfix" style="background-color:#336600;">
+	<div style="float:left;width:200px;height:300px;background-color:#996633;">
+	</div>
+	<div style="float:right;width:600px;height:600px;background-color:#996633;">
+	</div>
+	<div style="float:left;width:400px;height:200px;background-color:#996600;">
+	</div>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+      {* 包含脚本文件 *}
+{insert_scripts files='common.js,user.js,transport.js'}
+{insert_scripts files='utils.js'} 
+        <script type="text/javascript" src="js/jQueryRotate.2.2.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $("#startbtn").click(function() {
+                    //lottery();
+		    check_user();
+                });
+            });
+	    //'amydata.php',
+	    function check_user() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'activity_coupon.php?act=check_user',
+                    dataType: 'json',
+                    cache: false,
+                    error: function() {
+                        alert('Sorry，出错了 userID！');
+                        return false;
+                    },
+                    success: function(json) {
+			
+			var res = json.result; //真假
+			if(res)
+			{
+				lottery(json);
+			}
+			else
+			{
+				alert('请 登录 后再进行抽奖活动！');
+			}
+		      
+                    }
+                });
+            };
+            function lottery(json) {
+		 //$("#startbtn").unbind('click').css("cursor", "default");
+		var angle = json.angle; //指针角度 
+		var prize = json.prize; //中奖奖项标题 
+		$("#startbtn").rotate({
+		    duration: 3000, //转动时间 ms
+		    angle: 0, //从0度开始
+		    animateTo: 3600 + angle, //转动角度 
+		    easing: $.easing.easeOutSine, //easing扩展动画效果
+		    callback: function() {
+			var resulte = confirm('恭喜您中得' + prize + '\n想要继续吗？');
+			if (resulte) { //若是点击确定，继续抽奖
+			    lottery();
+			}
+		    }
+		});              
+            }
+        </script>
+
+    </body>
+</html>
+

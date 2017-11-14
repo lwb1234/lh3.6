@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $group_buy_goods} -->
+<div class="advert-img">
+    <div class="w clearfix">
+                <div class="Left img-item ">
+            <div class="word">
+                <p><a target="_blank" href="#" title="底价成团 限时限量" >团购</a></p>
+                <span><a target="_blank" href="#" title="底价成团 限时限量" >底价成团 限时限量</a></span>
+            </div>
+            <a target="_blank" href="#" title="底价成团 限时限量"><img src="picture/1506645194516294381.jpg" alt=""></a>
+        </div>
+                <div class="Left img-item ">
+            <div class="word">
+                <p><a target="_blank" href="#" title="新品特惠 每周更新" >新品</a></p>
+                <span><a target="_blank" href="#" title="新品特惠 每周更新" >新品特惠 每周更新</a></span>
+            </div>
+            <a target="_blank" href="#" title="新品特惠 每周更新"><img src="picture/1506646176100604918.jpg" alt=""></a>
+        </div>
+                
+                <div class="Left img-item last">
+            <div class="word">
+                <p><a target="_blank" href="#" title="原木生活 回归本真
+" >北欧</a></p>
+                <span><a target="_blank" href="#" title="原木生活 回归本真
+" >原木生活 回归本真</a></span>
+            </div>
+            <a target="_blank" href="#" title="原木生活 回归本真
+"><img src="picture/1506646062712348989.jpg" alt=""></a>
+        </div>
+           </div>
+</div>
+<div class="blank5"></div>
+<!-- {/if} -->

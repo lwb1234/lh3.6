@@ -1,0 +1,69 @@
+@charset "utf-8";
+@import url(comm.css);
+body{font-family:microsoft Yahei;min-width: 1200px;background:#f5f5f5;_width:expression(document.documentElement.clientWidth>1200?document.documentElement.clientWidth:1200);}
+em,i{font-style: normal;}
+/*顶部    start*/
+.yHeader{width: 100%;}
+/*导航   start*/
+.yNavIndex{width: 1200px;margin: 18px auto 0;height:35px;/*border-bottom: 2px solid #2d2d2d;*/position: relative;}
+.yNavIndex .yMenuIndex{margin-left: 220px;}
+.yNavIndex .yMenuIndex li a{position: relative;display: inline-block;font-size: 16px;color: #333;line-height: 32px;height: 32px;padding: 0 21px;}
+.yNavIndex .yMenuIndex li a.yMenua{font-weight:bold;border-bottom: 3px solid #2d2d2d;}
+.yNavIndex .yMenuIndex li a:hover{font-weight:bold;border-bottom: 3px solid #2d2d2d;}
+.yNavIndex .yMenuIndex li{float: left;height: 33px;padding: 0 12px;}
+/*下拉*/
+.pullDown{z-index: 100;position: absolute;}
+.pullDownTitle{height: 35px;width: 220px;background: #a90000;color: #ffffff;font-size: 16px;font-weight: normal;text-align: center;line-height: 35px;}
+.pullDownList{width: 220px;background: url(../images/pullbj.jpg);position: relative;z-index: 2;}
+.pullDownList li{height: 38px;color: #fefcfc;font-size: 13px;padding-left: 11px;position: relative;}
+.pullDownList li i{display: inline-block;position:relative;top:4px;margin-right: 8px;left:0;-webkit-transition: margin-left .2s linear;-moz-transition: margin-left .2s linear;/*-o-transition: margin-left .2s linear; width: 20px;height: 19px;background: url(../images/indexicon1.png) no-repeat; */}
+.pullDownList li.menulihover i{margin-left: 6px;}
+/*以下代码是使用图片精灵需要图片的定位信息*/
+/*.pullDownList li i.listi1{background-position: 0 -1240px}   
+.pullDownList li i.listi2{background-position: 0 -1271px}
+.pullDownList li i.listi3{background-position: 0 -1302px}
+.pullDownList li i.listi4{background-position: 0 -1332px}
+.pullDownList li i.listi5{background-position: 0 -1362px}
+.pullDownList li i.listi6{background-position: 0 -1395px}
+.pullDownList li i.listi7{background-position: 0 -1425px}
+.pullDownList li i.listi8{background-position: 0 -1457px}
+.pullDownList li i.listi9{background-position: 0 -1489px}
+.pullDownList li i.listi10{background-position: 0 -1519px}
+.pullDownList li i.listi11{background-position: 0 -1552px}
+.pullDownList li i.listi12{background-position: 0 -1582px}
+.pullDownList li i.listi13{background-position: 0 -1612px}
+.pullDownList li i.listi14{background-position: 0 -1644px}
+.pullDownList li i.listi15{background-position: 0 -1674px}*/
+.pullDownList li a{color: #fefcfc;font-size: 13px;}
+.pullDownList li.menuliselected{background: #4a4a4a;}
+.pullDownList li.menuliselected span{top: 14px;right: 7px;border-left: 4px solid transparent;border-top: 4px solid #fff;border-right:4px solid transparent;border-bottom: 0;}
+.pullDownList li.menulihover{background: #a90000;}
+.pullDownList li span{display: inline-block; width: 0;height: 0;position: absolute;top: 12px;right: 8px;}
+.pullDownList li.menulihover span{top: 12px;right: 8px;border-left: 4px solid #fff;border-top: 4px solid transparent;border-bottom: 4px solid transparent;border-right: 0;}
+/*下拉详细列表具体分类*/
+.yMenuListCon{width: 400px;height:480px;position: absolute;z-index:2;top: 2px;left:220px;overflow: hidden;}
+.yMenuListCon p{width:auto;color: #7f7e7e;font-size: 12px;margin: 10px 0 0 -1px;overflow: hidden;}
+.yMenuListCon p a{color: #7f7e7e;font-size: 12px;padding: 0 8px;display: inline-block;float: left;margin-top: 5px;background: url(../images/indexicon1.png) 0 -1695px;}
+.yMenuListCon p a.ecolor610{color: #a90000;}
+.yMenuListCon p a:hover{color: #a90000;text-decoration: underline;}
+.yMenuListConin{display: none; background: #fff;opacity: 0.9; -moz-opacity:0.9;filter: alpha(opacity=90);padding:0 20px;width: 360px;height:480px;position: absolute;left: 0;top: 0;}
+.yMenuLCinList{overflow: hidden;}
+	/*详细分类标题*/
+	.yMenuLCinList h3{position: relative;height: 20px;width: auto;margin: 25px auto 0;border-bottom: 1px solid #000;}
+	.yMenuLCinList h3 a{font-size: 14px;color: #2d2d2d;position: absolute;bottom: 0px;display: block;}
+	.yMenuLCinList h3 .yListMore{color: #666666;font-weight: normal;right: 0;with: 40px;height: 20px;}
+	.yMenuLCinList h3 .yListName{-webkit-transition: left .2s linear;-moz-transition: left .2s linear;-o-transition: left .2s linear;display: block;width: 90px;height: 20px;line-height:1px;padding-top: 17px;padding-left: 45px;left: 0;background:url(../images/yListNameicon.png) no-repeat 0 5px;}
+.yMenuLCinList h3 .yListName:hover{left:6px;}
+.yMenuLCinList .b6{ width:380px; height:auto; margin:0 auto; display:block;}
+ .yMenuLCinList .b6 img{display:block; width:190px; height:260px; float:left; padding-top:10px;}
+  .yMenuLCinList .b6 ul{ width:170px; height:200px; display:block; float:left;padding-top:10px;}
+  .yMenuLCinList .b6 ul li{ width:70px; height:30px; display:block; float:left;}	
+   .yMenuLCinList .b6 ul li a{font-size:12px; color:#666; line-height:30px; text-align:center;}
+	
+	
+	
+	
+/*导航   end*/
+/*顶部    end*/
+
+/*banner  start*/

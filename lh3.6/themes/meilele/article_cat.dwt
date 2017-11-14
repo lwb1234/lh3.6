@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="stylesheet" href="themes/meilele/css/mll_common.min.css?1122" />
+<script src="themes/meilele/js/jq.js?1119"></script>
+<link rel="stylesheet" type="text/css" href="themes/meilele/css/article_list.min.css?0220"/>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="position w clearfix"><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></div>
+<div class="listMain w clearfix">
+  <div class="listMainL Left">
+  <!-- {foreach from=$artciles_list item=article} -->
+    <div class="listBox">
+      <div class="listBoxT one">
+        <h2><span>发布日期：{$article.add_time}</span><a href="{$article.url}" target="_blank" title="{$article.title|escape:html}">{$article.title|escape:html}</a></h2>
+        <div class="lable"><i class="pen"></i><span class="name">关键字：</span> {if $article.keywords}<a class="lb">{$article.keywords}</a>{/if} </div>
+        <i class="coner"></i> </div>
+      <div class="listBoxC">
+        <p class="txt">{$article.description|truncate:30:"...":true}<a href="{$article.url}" target="_blank" title="【查看全文】">【查看全文】</a></p>
+        <p class="img"><a href="{$article.url}" target="_blank" title="{$article.title|escape:html}"><img width="600" height="400" src="{$article.file_url}" alt="{$article.title|escape:html}" /></a></p>
+      </div>
+    </div>
+    <!-- {/foreach} -->
+	
+    <!-- #BeginLibraryItem "/library/pages2.lbi" --><!-- #EndLibraryItem -->
+  </div>
+  <div class="listMainR Right">
+    
+    {foreach from=get_advlist_by_id(9) item=ad name=index_image}
+  <div id="ad" class="zxFocus current" style="margin-bottom:15px"><a href="{$ad.url}" title="{$ad.name}" target="undefined"><img src="{$ad.image}" alt="{$ad.name}" height="250" width="300"></a></div>
+
+  {/foreach}
+    <div class="rBox clearfix">
+      <h3>最新文章</h3>
+      <div class="clickRank">
+        <dl>
+          <dd>
+            <ul class="imgBox clearfix">
+			<!-- {foreach from=get_cat_arts_10(0) item=article name=artciles_list} -->
+			{if $smarty.foreach.artciles_list.iteration < 3}
+              <li {if $smarty.foreach.artciles_list.iteration < 2}class="first"{/if}><a href="{$article.url}" target="_blank" title="{$article.title|escape:html}"><img src="{$article.file_url}" width="135" height="85" alt="{$article.title|escape:html}"/></a><br/>
+                <a href="{$article.url}" target="_blank" title="{$article.title|escape:html}">{$article.title|truncate:10:"...":true}</a></li>
+			{/if}	
+				 <!-- {/foreach} -->
+             
+            </ul>
+          </dd>
+        </dl>
+		<!-- {foreach from=get_cat_arts_10(0) item=article name=artciles_list} -->
+			{if $smarty.foreach.artciles_list.iteration > 2}
+        <dl>
+          <dt><a href="{$article.url}" target="_blank" title="{$article.title|escape:html}">{$article.short_title}</a></dt>
+          <dd></dd>
+        </dl>
+        {/if}	
+		<!-- {/foreach} -->
+		
+      </div>
+    </div>
+    <div class="rBox clearfix">
+      <h3>热销产品</h3>
+      <div id="JS_shop_body" class="shopBody tabBody">
+        <ul class="ul current clearfix">
+		<!--{foreach from=get_cat_hot_goods_10(0) item=goods name=get_cat_new_goods_5}-->
+          <li class="Left clearfix">
+            <div class="list Left">
+              <div><a href="{$goods.url}" target="_blank" title="{$goods.name|escape:html}"> <img src="{$goods.thumb}" width="130" height="86" alt="{$goods.name|escape:html}" /></a> </div>
+              <p><a href="{$goods.url}" target="_blank" title="{$goods.name|escape:html}">{$goods.name|truncate:10:"...":true}</a><br />
+                本站价：<b class="red yen"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></b> </p>
+            </div>
+          </li>
+          <!--{/foreach}--> 
+		  
+          <li class="more"><a href="search.php?intro=hot" target="_blank" title="更多产品&raquo;">更多产品&raquo;</a></li>
+        </ul>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
+<!--
+LDZ:1369815350
+-->

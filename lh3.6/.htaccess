@@ -1,0 +1,66 @@
+RewriteEngine On
+#RewriteBase /
+
+RewriteRule ^mobile[\/]*$      mobile\/index\.php [QSA,L]
+RewriteRule ^admin[\/]*$      admin\/index\.php [QSA,L]
+RewriteRule ^bbs[\/]*$      bbs\/index\.php [QSA,L]
+
+RewriteRule ^search_list_hot\.html$                            search_list\.php\?intro=hot   [QSA,L]
+RewriteRule ^search_list_best\.html$                            search_list\.php\?intro=best   [QSA,L]
+RewriteRule ^search_list_promotion\.html$                            search_list\.php\?intro=promotion   [QSA,L]
+RewriteRule ^search_list_new\.html$                            search_list\.php\?intro=new   [QSA,L]
+RewriteRule ^brand\.html$    brand\.php [QSA,L]
+RewriteRule ^group_buy\.html$    group_buy\.php [QSA,L]
+RewriteRule ^activity\.html$    activity\.php [QSA,L]
+RewriteRule ^xspace\.html$    xspace\.php [QSA,L]
+RewriteRule ^xspace_show-([0-9]+)(.*)\.html$                            xspace_show\.php\?id=$1   [QSA,L]
+RewriteRule ^expr\.html$                            expr\.php   [QSA,L]
+RewriteRule ^expr-([0-9]+)(.*)\.html$                            expr\.php\?id=$1   [QSA,L]
+RewriteRule ^expr_show-([0-9]+)(.*)\.html$                            expr_show\.php\?id=$1   [QSA,L]
+
+# direct one-word access
+
+RewriteRule ^index\.html$    index\.php [L]
+RewriteRule ^category$      index\.php [L]
+RewriteRule ^([0-9a-zA-Z_]+)[\/]*$  index\.php\?url=$1  [QSA,L]
+RewriteRule ^([0-9a-zA-Z_]+)\.html$   index\.php\?url=$1  [QSA,L]
+
+
+
+# access any object by its numeric identifier
+RewriteRule ^feed-c([0-9]+)\.xml$       feed\.php\?cat=$1 [L]
+RewriteRule ^feed-b([0-9]+)\.xml$       feed\.php\?brand=$1 [L]
+RewriteRule ^feed-type([^-]+)\.xml$       feed\.php\?type=$1 [L]
+RewriteRule ^feed\.xml$                 feed\.php [L]
+
+RewriteRule ^category-([0-9]+)-b([0-9]+)-min([0-9]+)-max([0-9]+)-attr([^-]*)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$  category\.php\?id=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5&page=$6&sort=$7&order=$8 [QSA,L]
+RewriteRule ^category-([0-9]+)-b([0-9]+)-min([0-9]+)-max([0-9]+)-attr([^-]*)(.*)\.html$                            category\.php\?id=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5 [QSA,L]
+RewriteRule ^category-([0-9]+)-b([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$                                      category\.php\?id=$1&brand=$2&page=$3&sort=$4&order=$5 [QSA,L]
+RewriteRule ^category-([0-9]+)-b([0-9]+)-([0-9]+)(.*)\.html$                                                       category\.php\?id=$1&brand=$2&page=$3  [QSA,L]
+RewriteRule ^category-([0-9]+)-b([0-9]+)(.*)\.html$                                                                category\.php\?id=$1&brand=$2  [QSA,L]
+RewriteRule ^category-([0-9]+)(.*)\.html$                                                                          category\.php\?id=$1  [QSA,L]
+
+RewriteRule ^goods-([0-9]+)(.*)\.html$  goods\.php\?id=$1 [QSA,L]
+
+RewriteRule ^article_cat-([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$  article_cat\.php\?id=$1&page=$2&sort=$3&order=$4  [QSA,L]
+RewriteRule ^article_cat-([0-9]+)-([0-9]+)-(.+)(.*)\.html$              article_cat\.php\?id=$1&page=$2&keywords=$3 [QSA,L]
+RewriteRule ^article_cat-([0-9]+)-([0-9]+)(.*)\.html$                   article_cat\.php\?id=$1&page=$2   [QSA,L]
+RewriteRule ^article_cat-([0-9]+)(.*)\.html$                            article_cat\.php\?id=$1   [QSA,L]
+
+RewriteRule ^article-([0-9]+)(.*)\.html$                                article\.php\?id=$1   [QSA,L]
+
+RewriteRule ^brand-([0-9]+)-c([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)\.html   brand\.php\?id=$1&cat=$2&page=$3&sort=$4&order=$5 [QSA,L]
+RewriteRule ^brand-([0-9]+)-c([0-9]+)-([0-9]+)(.*)\.html                brand\.php\?id=$1&cat=$2&page=$3 [QSA,L]
+RewriteRule ^brand-([0-9]+)-c([0-9]+)(.*)\.html                         brand\.php\?id=$1&cat=$2 [QSA,L]
+RewriteRule ^brand-([0-9]+)(.*)\.html                                   brand\.php\?id=$1 [QSA,L]
+
+RewriteRule ^tag-(.*)\.html                                             search\.php\?keywords=$1 [QSA,L]
+RewriteRule ^snatch-([0-9]+)\.html$                                     snatch\.php\?id=$1 [QSA,L]
+RewriteRule ^group_buy-([0-9]+)\.html$                                  group_buy\.php\?act=view&id=$1 [QSA,L]
+RewriteRule ^auction-([0-9]+)\.html$                                    auction\.php\?act=view&id=$1 [QSA,L]
+
+RewriteRule ^exchange-id([0-9]+)(.*)\.html$                             exchange\.php\?id=$1&act=view [QSA,L]
+RewriteRule ^exchange-([0-9]+)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$ exchange\.php\?cat_id=$1&integral_min=$2&integral_max=$3&page=$4&sort=$5&order=$6 [QSA,L]
+RewriteRule ^exchange-([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$                         exchange\.php\?cat_id=$1&page=$2&sort=$3&order=$4 [QSA,L]
+RewriteRule ^exchange-([0-9]+)-([0-9]+)(.*)\.html$                                          exchange\.php\?cat_id=$1&page=$2  [QSA,L]
+RewriteRule ^exchange-([0-9]+)(.*)\.html$                                                   exchange\.php\?cat_id=$1  [QSA,L]

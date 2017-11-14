@@ -1,0 +1,13 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="comment mt10">
+      <div class="title_1"><span class="icon"></span><span class="zh">本月新品</span></div>
+      <!--{foreach from=get_cat_new_goods_10(0) item=goods_item name=best_goods}-->
+      <div class="list clearfix {if $smarty.foreach.best_goods.iteration eq 1}first{/if}{if $smarty.foreach.best_goods.last}last{/if}">
+        <div class="Left"><a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank"><img width="96" height="64" src="{$goods_item.thumb}"  alt="{$goods_item.name|escape:html}" /></a></div>
+        <div class="Right"> <a href="{$goods_item.url}" title="{$goods_item.name|escape:html}" target="_blank">{$goods_item.short_name|escape:html}</a>
+          <p class="gray">本站价：<span class="red yen"></span><span class="red JS_show_price_ajax" data-goods_id=""><!-- {if $goods_item.promote_price neq ""} -->{$goods_item.promote_price}<!-- {else}-->{$goods_item.shop_price}<!--{/if}--></span></p>
+        </div>
+      </div>
+     <!--{/foreach}--> 
+    </div>
